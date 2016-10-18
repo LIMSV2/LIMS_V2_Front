@@ -18,7 +18,7 @@
     <!--弹出层-->
     <link href="/assets/css/jquery.gritter.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/bootstrap-wysihtml5.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap-wysihtml5.css"/>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="/assets/js/html5shiv.js"></script>
@@ -71,9 +71,11 @@
                        data-desp="此处省略15个字"><span class="pull-right badge badge-success">2</span><i
                         class="fa fa-envelope-o"></i> <span>Email</span></a></li>
                 <li class="nav-parent"><a href=""><i class="fa fa-edit"></i> <span>合同管理</span></a>
-                    <ul class="children">
-                        <li><a href="general-forms.html"><i class="fa fa-caret-right"></i> 合同起草 </a></li>
-                        <li><a href="javascript:;" class="nav-item" data-type="contract/search" data-title="合同查询" data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同查询 </a></li>
+                    <ul class="children" data-icon="fa fa-edit">
+                        <li><a href="javascript:;" class="nav-item" data-type="contract/create" data-title="合同起草"
+                               data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同起草 </a></li>
+                        <li><a href="javascript:;" class="nav-item" data-type="contract/search" data-title="合同查询"
+                               data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同查询 </a></li>
                         <li><a href="form-validation.html"><i class="fa fa-caret-right"></i> 合同变更 </a></li>
                         <li><a href="form-validation.html"><i class="fa fa-caret-right"></i> 合同中止 </a></li>
                     </ul>
