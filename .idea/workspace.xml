@@ -24,36 +24,38 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/common/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="802" column="50" selection-start-line="802" selection-start-column="20" selection-end-line="802" selection-end-column="50" />
+            <state relative-caret-position="654">
+              <caret line="75" column="133" selection-start-line="75" selection-start-column="133" selection-end-line="75" selection-end-column="133" />
               <folding>
-                <marker date="1476787339000" expanded="true" signature="47274:47289" placeholder="..." />
-                <marker date="1476787339000" expanded="true" signature="47628:47643" placeholder="..." />
-                <marker date="1476787339000" expanded="true" signature="47981:47992" placeholder="..." />
-                <marker date="1476787339000" expanded="true" signature="48399:48414" placeholder="..." />
-                <marker date="1476787339000" expanded="true" signature="48713:48728" placeholder="..." />
-                <marker date="1476787339000" expanded="true" signature="49027:49038" placeholder="..." />
+                <marker date="1476788515000" expanded="true" signature="47353:47368" placeholder="..." />
+                <marker date="1476788515000" expanded="true" signature="47707:47722" placeholder="..." />
+                <marker date="1476788515000" expanded="true" signature="48060:48071" placeholder="..." />
+                <marker date="1476788515000" expanded="true" signature="48478:48493" placeholder="..." />
+                <marker date="1476788515000" expanded="true" signature="48792:48807" placeholder="..." />
+                <marker date="1476788515000" expanded="true" signature="49106:49117" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="compose.tpl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/template/compose.tpl">
+      <file leaf-file-name="search-results.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bracket/bracket /search-results.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+            <state relative-caret-position="348">
+              <caret line="1104" column="0" selection-start-line="1104" selection-start-column="0" selection-end-line="1105" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="email.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/template/email.tpl">
+      <file leaf-file-name="search.tpl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/template/contract/search.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="536" column="33" selection-start-line="536" selection-start-column="33" selection-end-line="536" selection-end-column="33" />
-              <folding />
+            <state relative-caret-position="343">
+              <caret line="305" column="39" selection-start-line="305" selection-start-column="39" selection-end-line="305" selection-end-column="39" />
+              <folding>
+                <element signature="n#select#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,9 +77,10 @@
         <option value="$PROJECT_DIR$/assets/js/custom.js" />
         <option value="$PROJECT_DIR$/pages/email/email.html" />
         <option value="$PROJECT_DIR$/assets/template/items/email.tpl" />
-        <option value="$PROJECT_DIR$/pages/common/index.html" />
         <option value="$PROJECT_DIR$/assets/template/email.tpl" />
         <option value="$PROJECT_DIR$/assets/template/compose.tpl" />
+        <option value="$PROJECT_DIR$/pages/common/index.html" />
+        <option value="$PROJECT_DIR$/assets/template/contract/search.tpl" />
       </list>
     </option>
   </component>
@@ -128,38 +131,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="LIMS_V2_Front" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIMS_V2_Front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIMS_V2_Front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIMS_V2_Front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIMS_V2_Front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="email" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -244,7 +215,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contract" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -262,7 +237,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -284,8 +259,8 @@
       <recent name="$PROJECT_DIR$/assets/template" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/css" />
       <recent name="$PROJECT_DIR$/assets/js" />
+      <recent name="$PROJECT_DIR$/assets/css" />
       <recent name="$PROJECT_DIR$/pages/email" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -347,12 +322,12 @@
       <option name="presentableId" value="Default" />
       <updated>1476779102994</updated>
       <workItem from="1476779104548" duration="1048000" />
-      <workItem from="1476780689429" duration="3523000" />
+      <workItem from="1476780689429" duration="4216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4571000" />
+    <option name="totallyTimeSpent" value="5264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -399,12 +374,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1476787339000" expanded="true" signature="47274:47289" placeholder="..." />
-            <marker date="1476787339000" expanded="true" signature="47628:47643" placeholder="..." />
-            <marker date="1476787339000" expanded="true" signature="47981:47992" placeholder="..." />
-            <marker date="1476787339000" expanded="true" signature="48399:48414" placeholder="..." />
-            <marker date="1476787339000" expanded="true" signature="48713:48728" placeholder="..." />
-            <marker date="1476787339000" expanded="true" signature="49027:49038" placeholder="..." />
+            <marker date="1476788515000" expanded="true" signature="47353:47368" placeholder="..." />
+            <marker date="1476788515000" expanded="true" signature="47707:47722" placeholder="..." />
+            <marker date="1476788515000" expanded="true" signature="48060:48071" placeholder="..." />
+            <marker date="1476788515000" expanded="true" signature="48478:48493" placeholder="..." />
+            <marker date="1476788515000" expanded="true" signature="48792:48807" placeholder="..." />
+            <marker date="1476788515000" expanded="true" signature="49106:49117" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -487,10 +462,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
           <caret line="1266" column="34" selection-start-line="1266" selection-start-column="34" selection-end-line="1266" selection-end-column="34" />
-          <folding>
-            <element signature="n#div#0;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -499,21 +471,6 @@
         <state relative-caret-position="297">
           <caret line="853" column="25" selection-start-line="853" selection-start-column="16" selection-end-line="853" selection-end-column="25" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/common/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="802" column="50" selection-start-line="802" selection-start-column="20" selection-end-line="802" selection-end-column="50" />
-          <folding>
-            <marker date="1476787339000" expanded="true" signature="47274:47289" placeholder="..." />
-            <marker date="1476787339000" expanded="true" signature="47628:47643" placeholder="..." />
-            <marker date="1476787339000" expanded="true" signature="47981:47992" placeholder="..." />
-            <marker date="1476787339000" expanded="true" signature="48399:48414" placeholder="..." />
-            <marker date="1476787339000" expanded="true" signature="48713:48728" placeholder="..." />
-            <marker date="1476787339000" expanded="true" signature="49027:49038" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -530,6 +487,47 @@
         <state relative-caret-position="238">
           <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bracket/bracket /search-results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="1104" column="0" selection-start-line="1104" selection-start-column="0" selection-end-line="1105" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/jquery-ui-1.10.3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="5" column="5415" selection-start-line="5" selection-start-column="5415" selection-end-line="5" selection-end-column="5415" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/common/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="75" column="133" selection-start-line="75" selection-start-column="133" selection-end-line="75" selection-end-column="133" />
+          <folding>
+            <marker date="1476788515000" expanded="true" signature="47353:47368" placeholder="..." />
+            <marker date="1476788515000" expanded="true" signature="47707:47722" placeholder="..." />
+            <marker date="1476788515000" expanded="true" signature="48060:48071" placeholder="..." />
+            <marker date="1476788515000" expanded="true" signature="48478:48493" placeholder="..." />
+            <marker date="1476788515000" expanded="true" signature="48792:48807" placeholder="..." />
+            <marker date="1476788515000" expanded="true" signature="49106:49117" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/template/contract/search.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="305" column="39" selection-start-line="305" selection-start-column="39" selection-end-line="305" selection-end-column="39" />
+          <folding>
+            <element signature="n#select#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
