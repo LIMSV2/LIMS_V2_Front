@@ -18,6 +18,11 @@
                     <form class="form" id="firstForm">
                         <div class="tab-content">
 
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0"
+                                     aria-valuemax="100"></div>
+                            </div>
+
                             <div class="tab-pane" id="vtab1">
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">Firstname</label>
@@ -124,8 +129,9 @@
                     </form>
 
                     <ul class="pager wizard">
-                        <li class="previous"><a href="javascript:void(0)">Previous</a></li>
-                        <li class="next"><a href="javascript:void(0)">Next</a></li>
+                        <li class="previous"><a href="javascript:void(0)">上一项</a></li>
+                        <li class="next"><a href="javascript:void(0)">下一项</a></li>
+                        <li class="finish"><a href="javascript:void(0)">完成</a></li>
                     </ul>
 
                 </div><!-- #validationWizard -->
@@ -154,16 +160,40 @@
 
         jQuery('#validationWizard').bootstrapWizard({
             tabClass: 'nav nav-pills nav-justified nav-disabled-click',
+            'nextSelector': '.next',
+            'previousSelector': '.previous',
+            onInit: function () {
+                jQuery('.wizard .finish').hide();
+            },
             onTabClick: function (tab, navigation, index) {
                 return false;
             },
             onNext: function (tab, navigation, index) {
+                var $total = navigation.find('li').length;
+                var $current = index + 1;
+                var $percent = ($current / $total) * 100;
+                jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
+
                 var $valid = jQuery('#firstForm').valid();
                 if (!$valid) {
-
                     $validator.focusInvalid();
                     return false;
                 }
+                if (index == 2) {
+                    jQuery('.wizard .finish').show();
+                }
+            },
+            onPrevious: function (tab, navigation, index) {
+                var $total = navigation.find('li').length;
+                var $current = index + 1;
+                var $percent = ($current / $total) * 100;
+                jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
+            },
+            onTabShow: function (tab, navigation, index) {
+                var $total = navigation.find('li').length;
+                var $current = index + 1;
+                var $percent = ($current / $total) * 100;
+                jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
             }
         });
 
