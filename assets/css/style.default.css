@@ -4109,6 +4109,12 @@ div.error label.error:before {
     display: inline-block;
 }
 
+.center-vertical {
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
+}
+
 
 
 /********** 18. MEDIA QUERIES **********/
