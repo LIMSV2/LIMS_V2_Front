@@ -24,15 +24,15 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/common/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="79" column="14" selection-start-line="79" selection-start-column="14" selection-end-line="79" selection-end-column="14" />
+            <state relative-caret-position="323">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
-                <marker date="1476789715000" expanded="true" signature="47515:47530" placeholder="..." />
-                <marker date="1476789715000" expanded="true" signature="47869:47884" placeholder="..." />
-                <marker date="1476789715000" expanded="true" signature="48222:48233" placeholder="..." />
-                <marker date="1476789715000" expanded="true" signature="48640:48655" placeholder="..." />
-                <marker date="1476789715000" expanded="true" signature="48954:48969" placeholder="..." />
-                <marker date="1476789715000" expanded="true" signature="49268:49279" placeholder="..." />
+                <marker date="1476797021000" expanded="true" signature="47515:47530" placeholder="..." />
+                <marker date="1476797021000" expanded="true" signature="47869:47884" placeholder="..." />
+                <marker date="1476797021000" expanded="true" signature="48222:48233" placeholder="..." />
+                <marker date="1476797021000" expanded="true" signature="48640:48655" placeholder="..." />
+                <marker date="1476797021000" expanded="true" signature="48954:48969" placeholder="..." />
+                <marker date="1476797021000" expanded="true" signature="49268:49279" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -41,8 +41,38 @@
       <file leaf-file-name="create.tpl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/template/contract/create.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="163" column="44" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
+            <state relative-caret-position="841">
+              <caret line="218" column="90" selection-start-line="218" selection-start-column="90" selection-end-line="218" selection-end-column="90" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.default.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/css/style.default.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="4111" column="16" selection-start-line="4111" selection-start-column="1" selection-end-line="4111" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="general-forms.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bracket/bracket /general-forms.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="1901" column="0" selection-start-line="1901" selection-start-column="0" selection-end-line="1901" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tables.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bracket/bracket /tables.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="564">
+              <caret line="586" column="41" selection-start-line="542" selection-start-column="10" selection-end-line="586" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -78,6 +108,7 @@
         <option value="$PROJECT_DIR$/assets/template/email.tpl" />
         <option value="$PROJECT_DIR$/assets/template/compose.tpl" />
         <option value="$PROJECT_DIR$/assets/template/contract/search.tpl" />
+        <option value="$PROJECT_DIR$/assets/css/style.default.css" />
         <option value="$PROJECT_DIR$/pages/common/index.html" />
         <option value="$PROJECT_DIR$/assets/template/contract/create.tpl" />
       </list>
@@ -240,6 +271,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIMS_V2_Front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIMS_V2_Front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -250,11 +299,12 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="cust&#9;FILE&#9;file:///Users/qulongjun/project/LIMS_V2_Front/assets/js/custom.js" />
+    <property name="SearchEverywhereHistoryKey" value="defa&#9;FILE&#9;file:///Users/qulongjun/project/LIMS_V2_Front/assets/css/style.default.css&#10;cust&#9;FILE&#9;file:///Users/qulongjun/project/LIMS_V2_Front/assets/js/custom.js" />
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/css" />
       <recent name="$PROJECT_DIR$/assets/template" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -321,12 +371,12 @@
       <option name="presentableId" value="Default" />
       <updated>1476779102994</updated>
       <workItem from="1476779104548" duration="1048000" />
-      <workItem from="1476780689429" duration="6688000" />
+      <workItem from="1476780689429" duration="12545000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7736000" />
+    <option name="totallyTimeSpent" value="13593000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -373,12 +423,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1476789715000" expanded="true" signature="47515:47530" placeholder="..." />
-            <marker date="1476789715000" expanded="true" signature="47869:47884" placeholder="..." />
-            <marker date="1476789715000" expanded="true" signature="48222:48233" placeholder="..." />
-            <marker date="1476789715000" expanded="true" signature="48640:48655" placeholder="..." />
-            <marker date="1476789715000" expanded="true" signature="48954:48969" placeholder="..." />
-            <marker date="1476789715000" expanded="true" signature="49268:49279" placeholder="..." />
+            <marker date="1476797021000" expanded="true" signature="47515:47530" placeholder="..." />
+            <marker date="1476797021000" expanded="true" signature="47869:47884" placeholder="..." />
+            <marker date="1476797021000" expanded="true" signature="48222:48233" placeholder="..." />
+            <marker date="1476797021000" expanded="true" signature="48640:48655" placeholder="..." />
+            <marker date="1476797021000" expanded="true" signature="48954:48969" placeholder="..." />
+            <marker date="1476797021000" expanded="true" signature="49268:49279" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -531,21 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/common/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="79" column="14" selection-start-line="79" selection-start-column="14" selection-end-line="79" selection-end-column="14" />
-          <folding>
-            <marker date="1476789715000" expanded="true" signature="47515:47530" placeholder="..." />
-            <marker date="1476789715000" expanded="true" signature="47869:47884" placeholder="..." />
-            <marker date="1476789715000" expanded="true" signature="48222:48233" placeholder="..." />
-            <marker date="1476789715000" expanded="true" signature="48640:48655" placeholder="..." />
-            <marker date="1476789715000" expanded="true" signature="48954:48969" placeholder="..." />
-            <marker date="1476789715000" expanded="true" signature="49268:49279" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bracket/bracket /form-wizards.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12548">
@@ -554,10 +589,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bracket/bracket /tables.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="586" column="41" selection-start-line="542" selection-start-column="10" selection-end-line="586" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bracket/bracket /general-forms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="1901" column="0" selection-start-line="1901" selection-start-column="0" selection-end-line="1901" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/bootstrap-timepicker.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/bootstrap-timepicker.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/common/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1476797021000" expanded="true" signature="47515:47530" placeholder="..." />
+            <marker date="1476797021000" expanded="true" signature="47869:47884" placeholder="..." />
+            <marker date="1476797021000" expanded="true" signature="48222:48233" placeholder="..." />
+            <marker date="1476797021000" expanded="true" signature="48640:48655" placeholder="..." />
+            <marker date="1476797021000" expanded="true" signature="48954:48969" placeholder="..." />
+            <marker date="1476797021000" expanded="true" signature="49268:49279" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/style.default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="4111" column="16" selection-start-line="4111" selection-start-column="1" selection-end-line="4111" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/template/contract/create.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="163" column="44" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
+        <state relative-caret-position="841">
+          <caret line="218" column="90" selection-start-line="218" selection-start-column="90" selection-end-line="218" selection-end-column="90" />
           <folding />
         </state>
       </provider>
