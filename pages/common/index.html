@@ -76,7 +76,9 @@
                                data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同起草 </a></li>
                         <li><a href="javascript:;" class="nav-item" data-type="contract/search" data-title="合同查询"
                                data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同查询 </a></li>
-                        <li><a href="form-validation.html"><i class="fa fa-caret-right"></i> 合同变更 </a></li>
+                        <li><a href="javascript:;" class="nav-item" data-type="contract/change" data-title="合同变更"
+                               data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同变更 </a></li>
+                        <li><a href="form-validation.html"><i class="fa fa-caret-right"></i> 草稿合同 </a></li>
                         <li><a href="form-validation.html"><i class="fa fa-caret-right"></i> 合同中止 </a></li>
                     </ul>
                 </li>
@@ -842,7 +844,20 @@
             } else {
                 jQuery.get("/assets/template/" + type + ".tpl", function (data) {
                     $('#contentpanel').html(data);
-                })
+                });
+                //页码事件
+                $('.paging').pagination({
+                    pageCount: 20,
+                    coping: true,
+                    homePage: '首页',
+                    endPage: '末页',
+                    prevContent: '上页',
+                    nextContent: '下页',
+                    current: 1,
+                    callback: function (page) {
+                        console.log(page.getCurrent());
+                    }
+                });
 
             }
         });
