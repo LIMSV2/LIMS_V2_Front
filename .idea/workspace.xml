@@ -41,8 +41,18 @@
       <file leaf-file-name="create.tpl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/template/contract/create.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+            <state relative-caret-position="280">
+              <caret line="163" column="44" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form-wizards.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bracket/bracket /form-wizards.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-12548">
+              <caret line="537" column="20" selection-start-line="537" selection-start-column="20" selection-end-line="537" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -311,12 +321,12 @@
       <option name="presentableId" value="Default" />
       <updated>1476779102994</updated>
       <workItem from="1476779104548" duration="1048000" />
-      <workItem from="1476780689429" duration="5202000" />
+      <workItem from="1476780689429" duration="6688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6250000" />
+    <option name="totallyTimeSpent" value="7736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -515,16 +525,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/bootstrap-wizard.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bracket/bracket /form-wizards.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="1259" column="0" selection-start-line="1259" selection-start-column="0" selection-end-line="1259" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="18" column="429" selection-start-line="18" selection-start-column="429" selection-end-line="18" selection-end-column="429" />
           <folding />
         </state>
       </provider>
@@ -544,10 +546,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bracket/bracket /form-wizards.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12548">
+          <caret line="537" column="20" selection-start-line="537" selection-start-column="20" selection-end-line="537" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/template/contract/create.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+        <state relative-caret-position="280">
+          <caret line="163" column="44" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
           <folding />
         </state>
       </provider>
