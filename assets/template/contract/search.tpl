@@ -392,49 +392,6 @@
                             <small class="text-muted">Modified: January 13, 2014 at 11:30am</small>
                         </div>
                     </div>
-
-                    <div class="media">
-                        <a href="#" class="pull-left">
-                            <img alt="" src="/assets/images/photos/media-doc.png" class="media-object">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="filename text-primary">MyDocument.pdf</h4>
-                            <small class="text-muted">Type: PDF Document</small>
-                            <br/>
-                            <small class="text-muted">Created: January 13, 2014 at 7:30am</small>
-                            <br/>
-                            <small class="text-muted">Modified: January 13, 2014 at 11:30am</small>
-                        </div>
-                    </div>
-
-                    <div class="media">
-                        <a href="#" class="pull-left">
-                            <img alt="" src="/assets/images/photos/media2.png" class="media-object">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="filename text-primary">SwimmingPool.png</h4>
-                            <small class="text-muted">Type: PNG Image</small>
-                            <br/>
-                            <small class="text-muted">Created: January 10, 2014 at 7:30am</small>
-                            <br/>
-                            <small class="text-muted">Modified: January 13, 2014 at 11:30am</small>
-                        </div>
-                    </div>
-
-                    <div class="media">
-                        <a href="#" class="pull-left">
-                            <img alt="" src="/assets/images/photos/media-audio.png" class="media-object">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="filename text-primary">WreckingBall.mp3</h4>
-                            <small class="text-muted">Type: MP3 Audio</small>
-                            <br/>
-                            <small class="text-muted">Created: January 13, 2014 at 7:30am</small>
-                            <br/>
-                            <small class="text-muted">Modified: January 13, 2014 at 11:30am</small>
-                        </div>
-                    </div>
-
                 </div><!-- results-list -->
 
             </div><!-- panel-body -->
