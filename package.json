@@ -1,0 +1,23 @@
+{
+  "name": "LIMS_V2_Front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qulongjun/LIMS_V2_Front.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qulongjun/LIMS_V2_Front/issues"
+  },
+  "homepage": "https://github.com/qulongjun/LIMS_V2_Front#readme",
+  "devDependencies": {
+    "webpack": "^1.13.2"
+  }
+}
