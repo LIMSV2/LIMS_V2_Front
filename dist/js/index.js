@@ -20444,7 +20444,7 @@ webpackJsonp([0,1],[
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"create.vue","sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"create.vue","sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -21271,8 +21271,97 @@ webpackJsonp([0,1],[
 	                LIMS.dialog.$set('title', '从客户管理系统中导入');
 	                LIMS.dialog.$set('template', 'aaa');
 	            }
+	        },
+	        created: function (transition) {
+	            debugger
+	            console.log(transition);
+	            alert("执行完成");
+	            loadReady();
+	        },
+	        route: {
+	            data: function (transition) {
+	                alert("data完成");
+	            },
+	            ready: function () {
+	                alert("ready完成");
+	            }
 	        }
 	    };
+	
+	
+	    function loadReady() {
+	        // 带有表单验证的流程图
+	        var $validator = jQuery("#firstForm").validate({
+	            highlight: function (element) {
+	                jQuery(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+	            },
+	            success: function (element) {
+	                jQuery(element).closest('.form-group').removeClass('has-error');
+	            }
+	        });
+	
+	        jQuery('#validationWizard').bootstrapWizard({
+	            tabClass: 'nav nav-pills nav-justified nav-disabled-click',
+	            'nextSelector': '.next',
+	            'previousSelector': '.previous',
+	            onInit: function () {
+	                jQuery('.wizard .finish').hide();
+	                jQuery('.wizard .draft').hide();
+	            },
+	            onTabClick: function (tab, navigation, index) {
+	                return false;
+	            },
+	            onNext: function (tab, navigation, index) {
+	                var $total = navigation.find('li').length;
+	                var $current = index + 1;
+	                var $percent = ($current / $total) * 100;
+	                jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
+	
+	                //                var $valid = jQuery('#firstForm').valid();
+	                //                if (!$valid) {
+	                //                    $validator.focusInvalid();
+	                //                    return false;
+	                //                }
+	
+	                if (index >= 3) {
+	                    jQuery('.wizard .finish').show();
+	                    jQuery('.wizard .draft').show();
+	                } else {
+	                    jQuery('.wizard .finish').hide();
+	                    jQuery('.wizard .draft').hide();
+	                }
+	            },
+	            onPrevious: function (tab, navigation, index) {
+	                var $total = navigation.find('li').length;
+	                var $current = index + 1;
+	                var $percent = ($current / $total) * 100;
+	                jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
+	                if (index >= 3) {
+	                    jQuery('.wizard .finish').show();
+	                    jQuery('.wizard .draft').show();
+	                } else {
+	                    jQuery('.wizard .finish').hide();
+	                    jQuery('.wizard .draft').hide();
+	                }
+	            },
+	            onTabShow: function (tab, navigation, index) {
+	                var $total = navigation.find('li').length;
+	                var $current = index + 1;
+	                var $percent = ($current / $total) * 100;
+	                jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
+	            }
+	        });
+	
+	        jQuery(".select2").select2({
+	            width: '100%',
+	            minimumResultsForSearch: -1
+	        });
+	        jQuery('#datepicker-multiple').datepicker({
+	            numberOfMonths: 3,
+	            showButtonPanel: true
+	        });
+	
+	    }
 	
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
