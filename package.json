@@ -19,5 +19,8 @@
   "homepage": "https://github.com/qulongjun/LIMS_V2_Front#readme",
   "devDependencies": {
     "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "imports-loader": "^0.6.5"
   }
 }

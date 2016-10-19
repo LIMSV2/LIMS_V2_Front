@@ -12,7 +12,7 @@ jQuery(document).ready(function () {
 
     "use strict";
     var LIMS = window.LIMS = {};
-    
+
 
     // Toggle Left Menu
     jQuery('.leftpanel .nav-parent > a').live('click', function () {
