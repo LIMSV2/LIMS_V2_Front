@@ -20,10 +20,11 @@ module.exports = {
     module: {
         //加载器配置
         loaders: [
-            // { test: /\.css$/, loader: 'style-loader!css-loader' },
-            //  { test: /\.js$/, loader: 'jsx-loader?harmony' },
+            {test: /\.css$/, loader: 'style-loader!css-loader'},
+            {test: /\.js$/, loaders:['jsx-loader?harmony']},
             // { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
-            // { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+            {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
+            {test: /\.vue$/, loader: 'vue'}
         ]
     },
     //其它解决方案配置
@@ -37,8 +38,8 @@ module.exports = {
             modernizr: './plugins/modernizr.min', //应用迁移辅助插件
             sparkline: './plugins/jquery.sparkline.min',//线状图插件
             toggles: './plugins/toggles.min.js',//开关样式控件
-            cookies: './plugins/jquery.cookies'//cookie操作
-
+            cookies: './plugins/jquery.cookies',//cookie操作
+            vue: './plugins/vue'//Vue.js
 
         }
     }

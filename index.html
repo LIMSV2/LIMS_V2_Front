@@ -35,7 +35,7 @@
 </div>
 
 
-<section>
+<section id="container">
 
     <div class="leftpanel">
 
@@ -70,12 +70,18 @@
                 <li><a href="javascript:;" class="nav-item" data-type="email" data-title="电子邮箱"
                        data-desp="此处省略15个字"><span class="pull-right badge badge-success">2</span><i
                         class="fa fa-envelope-o"></i> <span>Email</span></a></li>
-                <li class="nav-parent"><a href=""><i class="fa fa-edit"></i> <span>合同管理</span></a>
+                <li class="nav-parent"><a href="javascript:;"><i class="fa fa-edit"></i> <span>合同管理</span></a>
                     <ul class="children" data-icon="fa fa-edit">
-                        <li><a href="javascript:;" class="nav-item" data-type="contract/create" data-title="合同起草"
-                               data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同起草 </a></li>
-                        <li><a href="javascript:;" class="nav-item" data-type="contract/search" data-title="合同查询"
-                               data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同查询 </a></li>
+                        <li>
+                            <router-link to="/foo" class="nav-item" data-type="contract/create" data-title="合同起草"
+                                         data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同起草
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/bar" class="nav-item" data-type="contract/search" data-title="合同查询"
+                                         data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同查询
+                            </router-link>
+                        </li>
                         <li><a href="javascript:;" class="nav-item" data-type="contract/change" data-title="合同变更"
                                data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同变更 </a></li>
                         <li><a href="javascript:;" class="nav-item" data-type="contract/draft" data-title="草稿合同"
@@ -279,7 +285,7 @@
                                 <h5 class="title">您有 1 条新消息</h5>
                                 <ul class="dropdown-list gen-list">
                                     <li class="new">
-                                        <a href="">
+                                        <a href="javascript:;">
                                             <span class="thumb"><img src="/assets/images/photos/user1.png"
                                                                      alt=""/></span>
                                                     <span class="desc">
@@ -441,7 +447,7 @@
 
         <div class="contentpanel" id="contentpanel">
             <!-- 通过template进行渲染 -->
-
+            <router-view></router-view>
         </div>
 
     </div><!-- mainpanel -->
@@ -802,191 +808,191 @@
 
 <!--<script src="/assets/js/custom.js"></script>-->
 <!--<script type="text/javascript">jQuery(document).ready(function () {-->
-        <!--"use strict";-->
-        <!--jQuery('.nav-item').on('click', function () {-->
-            <!--var title = jQuery(this).data("title");-->
-            <!--var desp = jQuery(this).data("desp");-->
-            <!--var icon = jQuery(this).parents('ul:eq(0)').data("icon");-->
-            <!--jQuery('#title').html('<i class="' + icon + '"></i> ' + title + ' <span>' + desp + '</span>');-->
-            <!--var type = jQuery(this).data('type');-->
+<!--"use strict";-->
+<!--jQuery('.nav-item').on('click', function () {-->
+<!--var title = jQuery(this).data("title");-->
+<!--var desp = jQuery(this).data("desp");-->
+<!--var icon = jQuery(this).parents('ul:eq(0)').data("icon");-->
+<!--jQuery('#title').html('<i class="' + icon + '"></i> ' + title + ' <span>' + desp + '</span>');-->
+<!--var type = jQuery(this).data('type');-->
 
-            <!--var rowCount = sessionStorage.getItem("rowCount");-->
-            <!--if (!rowCount) rowCount = 0;-->
+<!--var rowCount = sessionStorage.getItem("rowCount");-->
+<!--if (!rowCount) rowCount = 0;-->
 
-            <!--if (type == "department") {-->
-                <!--jQuery.get("/assets/json/" + type + ".json", {pageCount: 1, rowCount: rowCount}, function (obj) {-->
-                    <!--var modal_tpl = template.compile(jQuery.fn.loadTemplate('/assets/template/items/' + type + '.tpl'));-->
-                    <!--var modal_body = modal_tpl(obj.modal);-->
-                    <!--obj.body = modal_body;-->
-                    <!--var render = template.compile(jQuery.fn.loadTemplate('/assets/template/table.tpl'));-->
-                    <!--var html = render(obj);-->
-                    <!--$('#contentpanel').html(html);-->
-
-
-                    <!--//绑定鼠标移入显示"操作"按钮-->
-                    <!--jQuery('.table-hidaction tbody tr').hover(function () {-->
-                        <!--jQuery(this).find('.table-action-hide a').animate({opacity: 1});-->
-                    <!--}, function () {-->
-                        <!--jQuery(this).find('.table-action-hide a').animate({opacity: 0});-->
-                    <!--});-->
-
-                    <!--//搜索框事件-->
-                    <!--jQuery("#serach").keyup(function () {-->
-                        <!--if (event.keyCode == 13) {-->
-                            <!--var data = jQuery(this).val();-->
-                            <!--console.log('按下回车了,数据为' + data);-->
-                        <!--}-->
-                    <!--});-->
-
-                    <!--//页码事件-->
-                    <!--$('.paging').pagination({-->
-                        <!--pageCount: obj.pageCount,-->
-                        <!--coping: true,-->
-                        <!--homePage: '首页',-->
-                        <!--endPage: '末页',-->
-                        <!--prevContent: '上页',-->
-                        <!--nextContent: '下页',-->
-                        <!--current: obj.currentPage,-->
-                        <!--callback: function (page) {-->
-                            <!--console.log(page.getCurrent());-->
-                        <!--}-->
-                    <!--});-->
-
-                    <!--$.validator.setDefaults({-->
-                        <!--submitHandler: function () {-->
-                        <!--}-->
-                    <!--});-->
-                <!--})-->
-            <!--} else {-->
-                <!--jQuery.get("/assets/template/" + type + ".tpl", function (data) {-->
-                    <!--$('#contentpanel').html(data);-->
-                <!--});-->
-                <!--//页码事件-->
-                <!--$('.paging').pagination({-->
-                    <!--pageCount: 20,-->
-                    <!--coping: true,-->
-                    <!--homePage: '首页',-->
-                    <!--endPage: '末页',-->
-                    <!--prevContent: '上页',-->
-                    <!--nextContent: '下页',-->
-                    <!--current: 1,-->
-                    <!--callback: function (page) {-->
-                        <!--console.log(page.getCurrent());-->
-                    <!--}-->
-                <!--});-->
-
-            <!--}-->
-        <!--});-->
+<!--if (type == "department") {-->
+<!--jQuery.get("/assets/json/" + type + ".json", {pageCount: 1, rowCount: rowCount}, function (obj) {-->
+<!--var modal_tpl = template.compile(jQuery.fn.loadTemplate('/assets/template/items/' + type + '.tpl'));-->
+<!--var modal_body = modal_tpl(obj.modal);-->
+<!--obj.body = modal_body;-->
+<!--var render = template.compile(jQuery.fn.loadTemplate('/assets/template/table.tpl'));-->
+<!--var html = render(obj);-->
+<!--$('#contentpanel').html(html);-->
 
 
-        <!--jQuery('#contentpanel').on('click', function (event) {-->
-            <!--var target = jQuery(event.target);-->
-            <!--if (target.hasClass('add_msg')) {-->
-                <!--//新增对象提示-->
+<!--//绑定鼠标移入显示"操作"按钮-->
+<!--jQuery('.table-hidaction tbody tr').hover(function () {-->
+<!--jQuery(this).find('.table-action-hide a').animate({opacity: 1});-->
+<!--}, function () {-->
+<!--jQuery(this).find('.table-action-hide a').animate({opacity: 0});-->
+<!--});-->
 
-                <!--var validator = jQuery("#modal_form").validate({-->
-                    <!--highlight: function (element) {-->
-                        <!--jQuery(element).closest('.form-group').removeClass('has-success').addClass('has-error');-->
-                    <!--},-->
-                    <!--success: function (element) {-->
-                        <!--jQuery(element).closest('.form-group').removeClass('has-error');-->
-                    <!--}-->
-                <!--});-->
+<!--//搜索框事件-->
+<!--jQuery("#serach").keyup(function () {-->
+<!--if (event.keyCode == 13) {-->
+<!--var data = jQuery(this).val();-->
+<!--console.log('按下回车了,数据为' + data);-->
+<!--}-->
+<!--});-->
 
-                <!--jQuery.post('/department/add', jQuery('#modal_form').serialize(), function (data) {-->
-                    <!--jQuery.fn.codeState(200, {-->
-                        <!--200: function () {-->
-                            <!--jQuery.fn.alert_msg('部门新增成功！', 'success');-->
-                            <!--validator.resetForm();-->
-                            <!--jQuery('#modal_form')[0].reset();-->
-                            <!--$('#addDepart').modal('hide');-->
-                        <!--},-->
-                        <!--500: "部门名称重复,请更换部门名称！",-->
-                        <!--501: "部门名称不能为空！"-->
-                    <!--});-->
-                <!--});-->
-            <!--}-->
-            <!--if (target.hasClass('select_all')) {-->
-                <!--//选中全部-->
-                <!--jQuery.fn.select_all('check', 'all');-->
-            <!--}-->
-            <!--if (target.hasClass('select_no')) {-->
-                <!--//反向选择-->
-                <!--jQuery.fn.select_all('check', 'toggle');-->
-            <!--}-->
-            <!--if (target.hasClass('run_all_select')) {-->
-                <!--//启用所有选中对象-->
-                <!--jQuery.fn.check_msg({-->
-                    <!--msg: '是否<span style="color: #1CAF9A;">启用</span>所有选中的部门？',-->
-                    <!--success: function () {-->
-                        <!--jQuery.fn.alert_msg('所选部门启用成功！');-->
-                    <!--}-->
-                <!--});-->
-            <!--}-->
-            <!--if (target.hasClass('stop_all_select')) {-->
-                <!--//停用所有选中对象-->
-                <!--jQuery.fn.check_msg({-->
-                    <!--msg: '是否<span style="color: #f0ad4e;">禁用</span>所有选中的部门？',-->
-                    <!--success: function () {-->
-                        <!--jQuery.fn.alert_msg('所选部门禁用成功！');-->
-                    <!--}-->
-                <!--});-->
-            <!--}-->
-            <!--if (target.hasClass('del_all_select')) {-->
-                <!--//删除所有选中对象-->
-                <!--jQuery.fn.check_msg({-->
-                    <!--msg: '是否<span style="color: red;">删除</span>所有选中的部门？',-->
-                    <!--success: function () {-->
-                        <!--jQuery.fn.alert_msg('所选部门删除成功！');-->
-                    <!--}-->
-                <!--});-->
-            <!--}-->
-            <!--if (target.hasClass('edit_item')) {-->
-                <!--console.log("编辑item");-->
-            <!--}-->
-            <!--if (target.hasClass('stop_item')) {-->
-                <!--jQuery.fn.check_msg({-->
-                    <!--msg: '是否<span style="color: #f0ad4e;">禁用</span>该部门？',-->
-                    <!--success: function () {-->
-                        <!--jQuery.fn.alert_msg('部门禁用成功！');-->
-                    <!--}-->
-                <!--});-->
-            <!--}-->
-            <!--if (target.hasClass('run_item')) {-->
-                <!--jQuery.fn.check_msg({-->
-                    <!--msg: '是否<span style="color: #1CAF9A;">启用</span>该部门？',-->
-                    <!--success: function () {-->
-                        <!--jQuery.fn.alert_msg('部门启用成功！');-->
-                    <!--}-->
-                <!--});-->
-            <!--}-->
-            <!--if (target.hasClass('del_item')) {-->
-                <!--jQuery.fn.check_msg({-->
-                    <!--msg: '是否<span style="color: red;">删除</span>该部门？',-->
-                    <!--success: function () {-->
-                        <!--jQuery.fn.alert_msg('该部门删除成功！');-->
-                    <!--}-->
-                <!--});-->
-            <!--}-->
-        <!--});-->
+<!--//页码事件-->
+<!--$('.paging').pagination({-->
+<!--pageCount: obj.pageCount,-->
+<!--coping: true,-->
+<!--homePage: '首页',-->
+<!--endPage: '末页',-->
+<!--prevContent: '上页',-->
+<!--nextContent: '下页',-->
+<!--current: obj.currentPage,-->
+<!--callback: function (page) {-->
+<!--console.log(page.getCurrent());-->
+<!--}-->
+<!--});-->
+
+<!--$.validator.setDefaults({-->
+<!--submitHandler: function () {-->
+<!--}-->
+<!--});-->
+<!--})-->
+<!--} else {-->
+<!--jQuery.get("/assets/template/" + type + ".tpl", function (data) {-->
+<!--$('#contentpanel').html(data);-->
+<!--});-->
+<!--//页码事件-->
+<!--$('.paging').pagination({-->
+<!--pageCount: 20,-->
+<!--coping: true,-->
+<!--homePage: '首页',-->
+<!--endPage: '末页',-->
+<!--prevContent: '上页',-->
+<!--nextContent: '下页',-->
+<!--current: 1,-->
+<!--callback: function (page) {-->
+<!--console.log(page.getCurrent());-->
+<!--}-->
+<!--});-->
+
+<!--}-->
+<!--});-->
 
 
-        <!--//自定义模态弹出框-->
-        <!--LIMS.dialog = new Vue({-->
-            <!--el: '#custom_modal',-->
-            <!--data: {-->
-                <!--title: 'default',-->
-                <!--template: '',-->
-                <!--other: ''-->
-            <!--},-->
-            <!--methods: {-->
-                <!--success: function (event) {-->
-                    <!--//成功时执行的内容-->
+<!--jQuery('#contentpanel').on('click', function (event) {-->
+<!--var target = jQuery(event.target);-->
+<!--if (target.hasClass('add_msg')) {-->
+<!--//新增对象提示-->
 
-                <!--}-->
-            <!--}-->
-        <!--});-->
-    <!--});-->
+<!--var validator = jQuery("#modal_form").validate({-->
+<!--highlight: function (element) {-->
+<!--jQuery(element).closest('.form-group').removeClass('has-success').addClass('has-error');-->
+<!--},-->
+<!--success: function (element) {-->
+<!--jQuery(element).closest('.form-group').removeClass('has-error');-->
+<!--}-->
+<!--});-->
+
+<!--jQuery.post('/department/add', jQuery('#modal_form').serialize(), function (data) {-->
+<!--jQuery.fn.codeState(200, {-->
+<!--200: function () {-->
+<!--jQuery.fn.alert_msg('部门新增成功！', 'success');-->
+<!--validator.resetForm();-->
+<!--jQuery('#modal_form')[0].reset();-->
+<!--$('#addDepart').modal('hide');-->
+<!--},-->
+<!--500: "部门名称重复,请更换部门名称！",-->
+<!--501: "部门名称不能为空！"-->
+<!--});-->
+<!--});-->
+<!--}-->
+<!--if (target.hasClass('select_all')) {-->
+<!--//选中全部-->
+<!--jQuery.fn.select_all('check', 'all');-->
+<!--}-->
+<!--if (target.hasClass('select_no')) {-->
+<!--//反向选择-->
+<!--jQuery.fn.select_all('check', 'toggle');-->
+<!--}-->
+<!--if (target.hasClass('run_all_select')) {-->
+<!--//启用所有选中对象-->
+<!--jQuery.fn.check_msg({-->
+<!--msg: '是否<span style="color: #1CAF9A;">启用</span>所有选中的部门？',-->
+<!--success: function () {-->
+<!--jQuery.fn.alert_msg('所选部门启用成功！');-->
+<!--}-->
+<!--});-->
+<!--}-->
+<!--if (target.hasClass('stop_all_select')) {-->
+<!--//停用所有选中对象-->
+<!--jQuery.fn.check_msg({-->
+<!--msg: '是否<span style="color: #f0ad4e;">禁用</span>所有选中的部门？',-->
+<!--success: function () {-->
+<!--jQuery.fn.alert_msg('所选部门禁用成功！');-->
+<!--}-->
+<!--});-->
+<!--}-->
+<!--if (target.hasClass('del_all_select')) {-->
+<!--//删除所有选中对象-->
+<!--jQuery.fn.check_msg({-->
+<!--msg: '是否<span style="color: red;">删除</span>所有选中的部门？',-->
+<!--success: function () {-->
+<!--jQuery.fn.alert_msg('所选部门删除成功！');-->
+<!--}-->
+<!--});-->
+<!--}-->
+<!--if (target.hasClass('edit_item')) {-->
+<!--console.log("编辑item");-->
+<!--}-->
+<!--if (target.hasClass('stop_item')) {-->
+<!--jQuery.fn.check_msg({-->
+<!--msg: '是否<span style="color: #f0ad4e;">禁用</span>该部门？',-->
+<!--success: function () {-->
+<!--jQuery.fn.alert_msg('部门禁用成功！');-->
+<!--}-->
+<!--});-->
+<!--}-->
+<!--if (target.hasClass('run_item')) {-->
+<!--jQuery.fn.check_msg({-->
+<!--msg: '是否<span style="color: #1CAF9A;">启用</span>该部门？',-->
+<!--success: function () {-->
+<!--jQuery.fn.alert_msg('部门启用成功！');-->
+<!--}-->
+<!--});-->
+<!--}-->
+<!--if (target.hasClass('del_item')) {-->
+<!--jQuery.fn.check_msg({-->
+<!--msg: '是否<span style="color: red;">删除</span>该部门？',-->
+<!--success: function () {-->
+<!--jQuery.fn.alert_msg('该部门删除成功！');-->
+<!--}-->
+<!--});-->
+<!--}-->
+<!--});-->
+
+
+<!--//自定义模态弹出框-->
+<!--LIMS.dialog = new Vue({-->
+<!--el: '#custom_modal',-->
+<!--data: {-->
+<!--title: 'default',-->
+<!--template: '',-->
+<!--other: ''-->
+<!--},-->
+<!--methods: {-->
+<!--success: function (event) {-->
+<!--//成功时执行的内容-->
+
+<!--}-->
+<!--}-->
+<!--});-->
+<!--});-->
 <!--</script>-->
 
 <!--<script type="text/html" id="modal_body"></script>-->
