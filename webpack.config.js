@@ -39,8 +39,9 @@ module.exports = {
             sparkline: './plugins/jquery.sparkline.min',//线状图插件
             toggles: './plugins/toggles.min.js',//开关样式控件
             cookies: './plugins/jquery.cookies',//cookie操作
-            vue: './plugins/vue'//Vue.js
-
+            vue: './plugins/vue',//Vue.js
+            //wizard:'./plugins/bootstrap-wizard.min',//业务流程图插件
+            //jquery_ui:'./plugins/jquery-ui-1.10.3.min'//jquery-ui
         }
     }
 };
