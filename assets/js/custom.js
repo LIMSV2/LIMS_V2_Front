@@ -11,6 +11,8 @@
 jQuery(document).ready(function () {
 
     "use strict";
+    var LIMS = window.LIMS = {};
+    
 
     // Toggle Left Menu
     jQuery('.leftpanel .nav-parent > a').live('click', function () {
@@ -438,9 +440,7 @@ jQuery(document).ready(function () {
             }
             opt[502] ? opt[502]() : jQuery.fn.alert_msg('请求异常,请重新尝试操作！', 'error');
         }
-    }
-
-
+    };
 });
 
 
