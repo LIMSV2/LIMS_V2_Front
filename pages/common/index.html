@@ -78,8 +78,8 @@
                                data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同查询 </a></li>
                         <li><a href="javascript:;" class="nav-item" data-type="contract/change" data-title="合同变更"
                                data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同变更 </a></li>
-                        <li><a href="form-validation.html"><i class="fa fa-caret-right"></i> 草稿合同 </a></li>
-                        <li><a href="form-validation.html"><i class="fa fa-caret-right"></i> 合同中止 </a></li>
+                        <li><a href="javascript:;" class="nav-item" data-type="contract/draft" data-title="草稿合同"
+                               data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 草稿合同 </a></li>
                     </ul>
                 </li>
                 <li class="nav-parent"><a href=""><i class="fa fa-flask"></i> <span>样品管理</span></a>
@@ -754,6 +754,22 @@
             </div><!-- modal-content -->
         </div><!-- modal-dialog -->
     </div><!-- 消息提示框 -->
+
+    <!--模态对话框-->
+    <div class="modal fade bs-example-modal-static" tabindex="-1" role="dialog" id="custom_modal"
+         aria-labelledby="mySmallModalLabel" data-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+                    <h4 class="modal-title">{{title}}</h4>
+                </div>
+                <div class="modal-body">
+                    {{template}}
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 
@@ -769,6 +785,7 @@
 
 
 <script src="/assets/js/vue.js"></script>
+<script src="/assets/js/vue-resource.min.js"></script>
 <!--分页插件-->
 <script src="/assets/js/jquery.pagination.js"></script>
 
@@ -951,6 +968,23 @@
                         jQuery.fn.alert_msg('该部门删除成功！');
                     }
                 });
+            }
+        });
+
+
+        //自定义模态弹出框
+        LIMS.dialog = new Vue({
+            el: '#custom_modal',
+            data: {
+                title: 'default',
+                template: '',
+                other: ''
+            },
+            methods: {
+                success: function (event) {
+                    //成功时执行的内容
+
+                }
             }
         });
     });

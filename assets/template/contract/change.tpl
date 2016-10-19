@@ -5,7 +5,7 @@
     <div class="panel-body">
         <div class="alert alert-danger">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <strong>⚠️ 警告!</strong> 改变合同的 <a href="" class="alert-link">某些信息</a> 可能会导致后续流程变更且不可逆。
+            <strong>⚠️ 警告!</strong> 改变合同的 <a href="" class="alert-link">某些信息</a> 可能会导致后续流程变更且不可逆。中止合同会导致该合同流程结束且不可逆。
         </div>
         <div class="table-responsive">
             <table class="table table-hidaction table-hover mb30">
@@ -29,7 +29,8 @@
                     <td class="text-center">5</td>
                     <td class="text-center">报告编制</td>
                     <td class="table-action">
-                        <a href=""><i class="fa fa-pencil"></i></a>
+                        <a href="javascript:;"><i class="fa fa-pencil"></i></a>
+                        <a href="javascript:;"><i class="fa fa-trash-o stop_item"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -40,7 +41,8 @@
                     <td class="text-center">5</td>
                     <td class="text-center">报告编制</td>
                     <td class="table-action">
-                        <a href=""><i class="fa fa-pencil"></i></a>
+                        <a href="javascript:;"><i class="fa fa-pencil"></i></a>
+                        <a href="javascript:;"><i class="fa fa-trash-o stop_item"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -51,7 +53,8 @@
                     <td class="text-center">5</td>
                     <td class="text-center">报告编制</td>
                     <td class="table-action">
-                        <a href=""><i class="fa fa-pencil"></i></a>
+                        <a href="javascript:;"><i class="fa fa-pencil"></i></a>
+                        <a href="javascript:;"><i class="fa fa-trash-o stop_item"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -62,7 +65,8 @@
                     <td class="text-center">5</td>
                     <td class="text-center">报告编制</td>
                     <td class="table-action">
-                        <a href=""><i class="fa fa-pencil"></i></a>
+                        <a href="javascript:;"><i class="fa fa-pencil"></i></a>
+                        <a href="javascript:;"><i class="fa fa-trash-o stop_item"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -73,7 +77,8 @@
                     <td class="text-center">5</td>
                     <td class="text-center">报告编制</td>
                     <td class="table-action">
-                        <a href=""><i class="fa fa-pencil"></i></a>
+                        <a href="javascript:;"><i class="fa fa-pencil"></i></a>
+                        <a href="javascript:;"><i class="fa fa-trash-o stop_item"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -84,7 +89,8 @@
                     <td class="text-center">5</td>
                     <td class="text-center">报告编制</td>
                     <td class="table-action">
-                        <a href=""><i class="fa fa-pencil"></i></a>
+                        <a href="javascript:;"><i class="fa fa-pencil edit_item"></i></a>
+                        <a href="javascript:;"><i class="fa fa-trash-o stop_item"></i></a>
                     </td>
                 </tr>
                 </tbody>

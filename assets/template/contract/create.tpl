@@ -10,11 +10,12 @@
                 <div id="validationWizard" class="basic-wizard">
 
                     <ul class="nav nav-pills nav-justified">
-                        <li><a href="#vtab1" data-toggle="tab"><span>第一步:</span> 两方信息</a></li>
+                        <li><a href="#vtab1" data-toggle="tab"><span>第一步:</span> 基本信息</a></li>
                         <li><a href="#vtab2" data-toggle="tab"><span>第二步:</span> 监测内容</a></li>
                         <li><a href="#vtab3" data-toggle="tab"><span>第三步:</span> 其他约定</a></li>
                         <li><a href="#vtab4" data-toggle="tab"><span>第四步:</span> 预览合同</a></li>
                     </ul>
+
 
                     <form class="form" id="firstForm">
                         <div class="tab-content">
@@ -22,52 +23,60 @@
                                 <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0"
                                      aria-valuemax="100"></div>
                             </div>
-
                             <div class="tab-pane" id="vtab1">
                                 <div class="form-group">
                                     <hr>
                                     <h3 class="text-center">甲方信息<a
-                                            class="btn btn-sm btn-success-alt pull-right ">导入客户资料</a></h3>
+                                            class="btn btn-sm btn-success-alt pull-right " data-toggle="modal"
+                                            data-target=".bs-example-modal-static" v-on:click="open_dialog">导入客户资料</a>
+                                    </h3>
                                     <hr/>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label text-center">委托单位</label>
+                                    <label class="col-sm-2 control-label text-center">委托单位 </label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname1" class="form-control" required/>
+                                        <input type="text" name="client_unit" v-model="client_unit" class="form-control"
+                                               required/>
                                     </div>
                                     <label class="col-sm-2 control-label text-center">邮政编码</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname2" class="form-control" required/>
+                                        <input type="text" name="client_code" v-model="client_code" class="form-control"
+                                               required/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">联系地址</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname3" class="form-control" required/>
+                                        <input type="text" name="client_address" v-model="client_address"
+                                               class="form-control" required/>
                                     </div>
                                     <label class="col-sm-2 control-label text-center">联系电话</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname4" class="form-control" required/>
+                                        <input type="text" name="client_tel" v-model="client_tel" class="form-control"
+                                               required/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">联系人</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname5" class="form-control" required/>
+                                        <input type="text" name="client" v-model="client"
+                                               class="form-control" required/>
                                     </div>
                                     <label class="col-sm-2 control-label text-center">传真电话</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname6" class="form-control" required/>
+                                        <input type="text" name="client_fax" v-model="client_fax" class="form-control"
+                                               required/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <hr>
                                     <h3 class="text-center">乙方信息 <a
-                                            class="btn btn-sm btn-success-alt pull-right ">导入预设</a></h3>
+                                            class="btn btn-sm btn-success-alt pull-right " v-on:click="default_info">导入预设</a>
+                                    </h3>
 
                                     <hr/>
                                 </div>
@@ -75,33 +84,39 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">受托单位</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname7" class="form-control" required/>
+                                        <input type="text" name="trustee_unit" v-model="trustee_unit"
+                                               class="form-control" required/>
                                     </div>
                                     <label class="col-sm-2 control-label text-center">邮政编码</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname8" class="form-control" required/>
+                                        <input type="text" name="trustee_code" v-model="trustee_code"
+                                               class="form-control" required/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">联系地址</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname9" class="form-control" required/>
+                                        <input type="text" name="trustee_address" v-model="trustee_address"
+                                               class="form-control" required/>
                                     </div>
                                     <label class="col-sm-2 control-label text-center">联系电话</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname10" class="form-control" required/>
+                                        <input type="text" name="trustee_tel" v-model="trustee_tel" class="form-control"
+                                               required/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">承办人</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname11" class="form-control" required/>
+                                        <input type="text" name="trustee" v-model="trustee" class="form-control"
+                                               required/>
                                     </div>
                                     <label class="col-sm-2 control-label text-center">传真电话</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname12" class="form-control" required/>
+                                        <input type="text" name="trustee_fax" v-model="trustee_fax" class="form-control"
+                                               required/>
                                     </div>
                                 </div>
                             </div>
@@ -267,7 +282,7 @@
                             </div>
                             <div class="tab-pane" id="vtab4">
 
-                                <div class="col-sm-12" >
+                                <div class="col-sm-12">
                                     <div class="table-responsive">
                                         <table class="table table-bordered  mb30">
                                             <thead>
@@ -394,7 +409,7 @@
     jQuery(document).ready(function () {
 
         "use strict";
-        // With Form Validation Wizard
+        // 带有表单验证的流程图
         var $validator = jQuery("#firstForm").validate({
             highlight: function (element) {
                 jQuery(element).closest('.form-group').removeClass('has-success').addClass('has-error');
@@ -466,5 +481,64 @@
         });
 
 
+        window.vue = new Vue({
+            me: this,
+            el: '#contentpanel',
+            data: {
+                "client_unit": "",
+                "client_code": "",
+                "client_address": "",
+                "client_tel": "",
+                "client": "",
+                "client_fax": "",
+                "trustee_unit": "",
+                "trustee_code": "",
+                "trustee_address": "",
+                "trustee_tel": "",
+                "trustee": "",
+                "trustee_fax": ""
+            },
+            methods: {
+                default_info: function () {
+                    var me = this;
+                    jQuery.fn.check_msg({
+                        msg: '是否导入系统预设的乙方信息？已经填写的信息将会被覆盖。',
+                        success: function () {
+                            me.$http.get('/assets/json/contract_default.json').then(function (response) {
+                                var data = response.data;
+                                for (var key in data) {
+                                    var value = data[key];
+                                    me.$set(key, value);
+                                }
+                            }, function (response) {
+                                //error handle
+
+                            })
+
+
+                        }
+                    });
+                },
+                open_dialog: function () {
+                    LIMS.dialog.$set('title', '从客户管理系统中导入');
+                    LIMS.dialog.$set('template', 'aaa');
+
+                }
+            },
+            ready: function () {
+                this.$http.get('/assets/json/contract_create.json').then(function (response) {
+                    var data = response.data;
+                    for (var key in data) {
+                        var value = data[key];
+                        this.$set(key, value);
+                    }
+
+                    //this.data = data;
+                }, function (response) {
+                    //handle error
+                });
+            }
+        });
+        //console.log(JSON.parse(JSON.stringify(vue._data)));
     });
 </script>
