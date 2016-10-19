@@ -5,11 +5,28 @@ require('imports?this=>window!modernizr');
 require("sparkline");
 require("toggles");
 require("cookies");
-
+var Vue = require("vue");
+var VueRouter = require("vue-router");
 /**
  * 此处放置公共的功能模块
  */
 jQuery(document).ready(function () {
+    //定义路由规则
+    //path:路由的路径  component: *.vue的路径或者直接手写template
+    const routes = [
+        {path: '/foo', component: require('../components/contract/create.vue')},
+        {path: '/bar', component: {template: '<div>bar</div>'}}
+    ];
+    //Vue路由
+    Vue.use(VueRouter);
+    const router = new VueRouter({
+        routes // （缩写）相当于 routes: routes
+    });
+    const app = new Vue({
+        router
+    }).$mount('#container');
+
+
     //关闭加载load进度条
     jQuery('#preloader').delay(350).fadeOut(function () {
         jQuery('body').delay(350).css({'overflow': 'visible'});
@@ -467,10 +484,25 @@ jQuery(document).ready(function () {
             jQuery('.mainpanel').height(docHeight);
     }
 
+
+    //var App = require('../components/contract/create.vue');
+
+
+    // var vue = Vue.extend({});
+    //
+    // var App = require('../components/contract/create.vue');
+    // var routes = [
+    //     {path: '/create', component: App}
+    // ];
+    // var router = new VueRouter({
+    //     routes: routes
+    // });
+    // debugger
+    // router.start(vue,"#contentpanel");
 });
 
 /**
- * 表格部分操作
+ * 菜单部分操作
  */
 jQuery('.nav-item').on('click', function () {
     var title = jQuery(this).data("title");
@@ -482,67 +514,74 @@ jQuery('.nav-item').on('click', function () {
     var rowCount = sessionStorage.getItem("rowCount");
     if (!rowCount) rowCount = 0;
 
-    if (type == "department") {
-        jQuery.get("/assets/json/" + type + ".json", {pageCount: 1, rowCount: rowCount}, function (obj) {
-            var modal_tpl = template.compile(jQuery.fn.loadTemplate('/assets/template/items/' + type + '.tpl'));
-            var modal_body = modal_tpl(obj.modal);
-            obj.body = modal_body;
-            var render = template.compile(jQuery.fn.loadTemplate('/assets/template/table.tpl'));
-            var html = render(obj);
-            $('#contentpanel').html(html);
-
-
-            //绑定鼠标移入显示"操作"按钮
-            jQuery('.table-hidaction tbody tr').hover(function () {
-                jQuery(this).find('.table-action-hide a').animate({opacity: 1});
-            }, function () {
-                jQuery(this).find('.table-action-hide a').animate({opacity: 0});
-            });
-
-            //搜索框事件
-            jQuery("#serach").keyup(function () {
-                if (event.keyCode == 13) {
-                    var data = jQuery(this).val();
-                    console.log('按下回车了,数据为' + data);
-                }
-            });
-
-            //页码事件
-            // $('.paging').pagination({
-            //     pageCount: obj.pageCount,
-            //     coping: true,
-            //     homePage: '首页',
-            //     endPage: '末页',
-            //     prevContent: '上页',
-            //     nextContent: '下页',
-            //     current: obj.currentPage,
-            //     callback: function (page) {
-            //         console.log(page.getCurrent());
-            //     }
-            // });
-
-            $.validator.setDefaults({
-                submitHandler: function () {
-                }
-            });
-        })
-    } else {
-        jQuery.get("/assets/template/" + type + ".tpl", function (data) {
-            $('#contentpanel').html(data);
-        });
-        //页码事件
-        // $('.paging').pagination({
-        //     pageCount: 20,
-        //     coping: true,
-        //     homePage: '首页',
-        //     endPage: '末页',
-        //     prevContent: '上页',
-        //     nextContent: '下页',
-        //     current: 1,
-        //     callback: function (page) {
-        //         console.log(page.getCurrent());
-        //     }
-        // });
+    if (type) {
+        var App = require('../components/contract/create.vue');
+        console.log(App);
+        //$('#contentpanel').html(data);
 
     }
+
+    // if (type == "department") {
+    //     jQuery.get("/assets/json/" + type + ".json", {pageCount: 1, rowCount: rowCount}, function (obj) {
+    //         var modal_tpl = template.compile(jQuery.fn.loadTemplate('/assets/template/items/' + type + '.tpl'));
+    //         var modal_body = modal_tpl(obj.modal);
+    //         obj.body = modal_body;
+    //         var render = template.compile(jQuery.fn.loadTemplate('/assets/template/table.tpl'));
+    //         var html = render(obj);
+    //         $('#contentpanel').html(html);
+    //
+    //
+    //         //绑定鼠标移入显示"操作"按钮
+    //         jQuery('.table-hidaction tbody tr').hover(function () {
+    //             jQuery(this).find('.table-action-hide a').animate({opacity: 1});
+    //         }, function () {
+    //             jQuery(this).find('.table-action-hide a').animate({opacity: 0});
+    //         });
+    //
+    //         //搜索框事件
+    //         jQuery("#serach").keyup(function () {
+    //             if (event.keyCode == 13) {
+    //                 var data = jQuery(this).val();
+    //                 console.log('按下回车了,数据为' + data);
+    //             }
+    //         });
+    //
+    //         //页码事件
+    //         $('.paging').pagination({
+    //             pageCount: obj.pageCount,
+    //             coping: true,
+    //             homePage: '首页',
+    //             endPage: '末页',
+    //             prevContent: '上页',
+    //             nextContent: '下页',
+    //             current: obj.currentPage,
+    //             callback: function (page) {
+    //                 console.log(page.getCurrent());
+    //             }
+    //         });
+    //
+    //         $.validator.setDefaults({
+    //             submitHandler: function () {
+    //             }
+    //         });
+    //     })
+    // } else {
+    //     jQuery.get("/assets/template/" + type + ".tpl", function (data) {
+    //         $('#contentpanel').html(data);
+    //     });
+    //     //页码事件
+    //     $('.paging').pagination({
+    //         pageCount: 20,
+    //         coping: true,
+    //         homePage: '首页',
+    //         endPage: '末页',
+    //         prevContent: '上页',
+    //         nextContent: '下页',
+    //         current: 1,
+    //         callback: function (page) {
+    //             console.log(page.getCurrent());
+    //         }
+    //     });
+    //
+    // }
 });
