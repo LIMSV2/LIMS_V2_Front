@@ -19,10 +19,10 @@
 <script src="/assets/js/bootstrap-wysihtml5.js"></script>
 
 <script>
+    require("jquery");
     jQuery(document).ready(function () {
 
         "use strict";
-
         // Chosen Select
         jQuery(".chosen-select").chosen({'width': '100%', 'white-space': 'nowrap'});
     });

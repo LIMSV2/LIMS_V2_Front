@@ -406,8 +406,8 @@
 <script src="/assets/js/bootstrap-wizard.min.js"></script>
 <script src="/assets/js/jquery-ui-1.10.3.min.js"></script>
 <script>
-    jQuery(document).ready(function () {
 
+    jQuery(document).ready(function () {
         "use strict";
         // 带有表单验证的流程图
         var $validator = jQuery("#firstForm").validate({

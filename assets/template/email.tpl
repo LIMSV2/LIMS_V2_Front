@@ -503,39 +503,39 @@
 
 </div><!-- row -->
 
-<script>
-    jQuery(document).ready(function () {
+<!--<script>-->
+    <!--jQuery(document).ready(function () {-->
 
-        "use strict"
+        <!--"use strict"-->
 
-        //Check
-        jQuery('.ckbox input').click(function () {
-            var t = jQuery(this);
-            if (t.is(':checked')) {
-                t.closest('tr').addClass('selected');
-            } else {
-                t.closest('tr').removeClass('selected');
-            }
-        });
+        <!--//Check-->
+        <!--jQuery('.ckbox input').click(function () {-->
+            <!--var t = jQuery(this);-->
+            <!--if (t.is(':checked')) {-->
+                <!--t.closest('tr').addClass('selected');-->
+            <!--} else {-->
+                <!--t.closest('tr').removeClass('selected');-->
+            <!--}-->
+        <!--});-->
 
-        // Star
-        jQuery('.star').click(function () {
-            if (!jQuery(this).hasClass('star-checked')) {
-                jQuery(this).addClass('star-checked');
-            }
-            else
-                jQuery(this).removeClass('star-checked');
-            return false;
-        });
+        <!--// Star-->
+        <!--jQuery('.star').click(function () {-->
+            <!--if (!jQuery(this).hasClass('star-checked')) {-->
+                <!--jQuery(this).addClass('star-checked');-->
+            <!--}-->
+            <!--else-->
+                <!--jQuery(this).removeClass('star-checked');-->
+            <!--return false;-->
+        <!--});-->
 
-        // Read mail
-        jQuery('.table-email .media').click(function () {
-            location.href = "read.html";
-        });
-        jQuery('#compose-email').click(function () {
-            jQuery.get("/assets/template/compose.tpl", function (data) {
-                $('#email_content').html(data);
-            })
-        });
-    });
-</script>
+        <!--// Read mail-->
+        <!--jQuery('.table-email .media').click(function () {-->
+            <!--location.href = "read.html";-->
+        <!--});-->
+        <!--jQuery('#compose-email').click(function () {-->
+            <!--jQuery.get("/assets/template/compose.tpl", function (data) {-->
+                <!--$('#email_content').html(data);-->
+            <!--})-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
