@@ -437,6 +437,7 @@
                         <li class="previous"><a href="javascript:void(0)">上一项</a></li>
                         <li class="next"><a href="javascript:void(0)">下一项</a></li>
                         <li class="draft"><a href="javascript:void(0)" @click="saveAsDraft">存为草稿</a></li>
+                        <li class="print"><a href="javascript:void(0)" @click="print">打印</a></li>
                         <li class="finish"><a href="javascript:void(0)" @click="saveAsProject">完成创建</a></li>
                     </ul>
 
@@ -471,6 +472,7 @@
             onInit: function () {
                 jQuery('.wizard .finish').hide();
                 jQuery('.wizard .draft').hide();
+                jQuery('.wizard .print').hide();
                 jQuery('.wizard .previous').hide();
             },
             onTabClick: function (tab, navigation, index) {
@@ -491,9 +493,11 @@
                 if (index >= 3) {
                     jQuery('.wizard .finish').show();
                     jQuery('.wizard .draft').show();
+                    jQuery('.wizard .print').show();
                 } else {
                     jQuery('.wizard .finish').hide();
                     jQuery('.wizard .draft').hide();
+                    jQuery('.wizard .print').hide();
                 }
                 if (index == 3) {
                     jQuery('.wizard .next').hide();
@@ -515,9 +519,11 @@
                 if (index >= 3) {
                     jQuery('.wizard .finish').show();
                     jQuery('.wizard .draft').show();
+                    jQuery('.wizard .print').hide();
                 } else {
                     jQuery('.wizard .finish').hide();
                     jQuery('.wizard .draft').hide();
+                    jQuery('.wizard .print').hide();
                 }
                 if (index == 0) {
                     jQuery('.wizard .next').hide();
@@ -782,6 +788,14 @@
                         msg: "您即将创建一份全新的合同,创建完成之后将进入项目流中,是否创建？",
                         success: function () {
                             jQuery.fn.alert_msg("合同创建成功！");
+                        }
+                    });
+                },
+                print: function () {
+                    jQuery.fn.check_msg({
+                        msg: "是否打印当前合同？",
+                        success: function () {
+                            jQuery.fn.alert_msg("合同打印成功！");
                         }
                     });
                 }
