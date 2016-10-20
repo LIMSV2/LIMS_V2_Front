@@ -352,8 +352,11 @@
                                                                         {{item.environment_text}}
                                                                     </td>
                                                                     <td class="text-center">{{item.monitor_point}}</td>
-                                                                    <td class="text-center">{{item
-                                                                        .monitor_item_text}}
+                                                                    <td class="text-center">
+                                                                        <template v-for="temp in item.monitor_item_text">
+                                                                            {{temp.name}}
+                                                                        </template>
+
                                                                     </td>
                                                                     <td class="text-center">{{item.frequency}}</td>
                                                                     <td class="text-center">{{item.other}}</td>

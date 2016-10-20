@@ -773,6 +773,20 @@
             </div>
         </div>
     </div>
+    <!--大的模态-->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="custom_lg_modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+                    <h4 class="modal-title">{{title}}</h4>
+                </div>
+                <div class="modal-body">
+                    <component :is="currentView"></component>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 
@@ -985,6 +999,19 @@
         //自定义模态弹出框
         LIMS.dialog = new Vue({
             el: '#custom_modal',
+            data: {
+                title: 'default',
+                currentView: ''
+            },
+            methods: {
+                success: function (event) {
+                    //成功时执行的内容
+
+                }
+            }
+        });
+        LIMS.dialog_lg= new Vue({
+            el: '#custom_lg_modal',
             data: {
                 title: 'default',
                 currentView: ''

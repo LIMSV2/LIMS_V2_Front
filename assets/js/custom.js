@@ -455,6 +455,12 @@ jQuery(document).ready(function () {
             opt[502] ? opt[502]() : jQuery.fn.alert_msg('请求异常,请重新尝试操作！', 'error');
         }
     };
+
+
+    //执行自动调整高度,2秒执行一次 
+    setInterval(function () {
+        adjustmainpanelheight();
+    }, 2000);
 });
 
 
