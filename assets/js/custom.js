@@ -12,7 +12,7 @@ jQuery(document).ready(function () {
 
     "use strict";
     var LIMS = window.LIMS = {};
-    
+
 
     // Toggle Left Menu
     jQuery('.leftpanel .nav-parent > a').live('click', function () {
@@ -56,6 +56,8 @@ jQuery(document).ready(function () {
         if (docHeight > jQuery('.mainpanel').height())
             jQuery('.mainpanel').height(docHeight);
     }
+
+    window.adjustmainpanelheight = adjustmainpanelheight;
 
     adjustmainpanelheight();
 

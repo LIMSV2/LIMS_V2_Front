@@ -124,27 +124,30 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">项目名称</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="firstname1" class="form-control" required/>
+                                        <input type="text" v-model="project_name" name="project_name"
+                                               class="form-control" required/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">监测目的</label>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" rows="5"></textarea>
+                                        <textarea class="form-control" v-model="monitor_aim" rows="5"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">监测类别</label>
                                     <div class="col-sm-10">
-                                        <select class="select2" data-placeholder="选择监测类别" required>
-                                            <option value=""></option>
-                                            <option value="ys">验收监测</option>
-                                            <option value="hp">环评监测</option>
-                                            <option value="wt">委托监测</option>
-                                            <option value="zf">执法监测</option>
-                                            <option value="lx">例行监测</option>
-                                            <option value="yj">应急监测</option>
-                                            <option value="jd">监督监测</option>
+                                        <select class="select2" id="monitor_type" v-model="monitor_type"
+                                                data-placeholder="选择监测类别"
+                                                required>
+                                            <option value="1"></option>
+                                            <option value="2">验收监测</option>
+                                            <option value="3">环评监测</option>
+                                            <option value="4">委托监测</option>
+                                            <option value="5">执法监测</option>
+                                            <option value="6">例行监测</option>
+                                            <option value="7">应急监测</option>
+                                            <option value="8">监督监测</option>
                                         </select>
                                     </div>
                                 </div>
@@ -152,15 +155,17 @@
                                     <label class="col-sm-2 control-label text-center">检测方法</label>
                                     <div class="col-sm-10">
                                         <div class="rdio rdio-primary">
-                                            <input type="radio" checked id="male4" value="m" name="gender" required/>
-                                            <label for="male4">以我单位通过计量认证、国家实验室认可的方法进行检测</label>
+                                            <input type="radio" v-model="monitor_way" checked id="way1" value="0"
+                                                   name="gender" required/>
+                                            <label for="way1">以我单位通过计量认证、国家实验室认可的方法进行检测</label>
                                         </div>
                                         <div class="rdio rdio-primary">
-                                            <input type="radio" value="f" id="female4" name="gender"/>
-                                            <label for="female4">客户指定的方法:</label>
-                                            <input type="text" name="firstname1" class="form-control " disabled/>
+                                            <input type="radio" v-model="monitor_way" value="1" id="way2"
+                                                   name="gender"/>
+                                            <label for="way2">客户指定的方法:</label>
+                                            <input type="text" v-model="monitor_way_desp" name="monitor_way_desp"
+                                                   class="form-control " disabled/>
                                         </div>
-                                        <label class="error" for="gender"></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -180,45 +185,36 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td class="text-center">1</td>
-                                                    <td class="text-center">固体废弃物</td>
-                                                    <td class="text-center">3</td>
-                                                    <td class="text-center">三氧化二硫</td>
-                                                    <td class="text-center">2次/天</td>
-                                                    <td class="text-center">采样点共有多个</td>
-                                                    <td class="table-action">
-                                                        <a href=""><i class="fa fa-pencil"></i></a>
-                                                        <a href="" class="delete-row"><i class="fa fa-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">2</td>
-                                                    <td class="text-center">固体废弃物</td>
-                                                    <td class="text-center">3</td>
-                                                    <td class="text-center">三氧化二硫</td>
-                                                    <td class="text-center">2次/天</td>
-                                                    <td class="text-center">采样点共有多个</td>
-                                                    <td class="table-action">
-                                                        <a href=""><i class="fa fa-pencil"></i></a>
-                                                        <a href="" class="delete-row"><i class="fa fa-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">3</td>
-                                                    <td class="text-center">固体废弃物</td>
-                                                    <td class="text-center">3</td>
-                                                    <td class="text-center">三氧化二硫</td>
-                                                    <td class="text-center">2次/天</td>
-                                                    <td class="text-center">采样点共有多个</td>
-                                                    <td class="table-action">
-                                                        <a href=""><i class="fa fa-pencil"></i></a>
-                                                        <a href="" class="delete-row"><i class="fa fa-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
+                                                <template v-for="(index,item) in item_arr">
+                                                    <tr>
+                                                        <td class="text-center">{{index+1}}</td>
+                                                        <td class="text-center">
+                                                            {{item.environment_text}}
+                                                        </td>
+                                                        <td class="text-center">{{item.monitor_point}}</td>
+                                                        <td class="text-center">{{item
+                                                            .monitor_item_text}}
+                                                        </td>
+                                                        <td class="text-center">{{item.frequency}}</td>
+                                                        <td class="text-center">{{item.other}}</td>
+                                                        <td class="table-action">
+
+                                                            <a v-if="index!=0" href="javascript:;"
+                                                               @click="sort_up(index)"><i
+                                                                    class="fa fa-arrow-up"></i></a>
+                                                            <a v-if="index!=item_arr.length-1" href="javascript:;"
+                                                               @click="sort_down(index)"><i
+                                                                    class="fa fa-arrow-down"></i></a>
+                                                            <a href="javascript:;" @click="delete_item(item)"><i
+                                                                    class="fa fa-trash-o"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </template>
                                                 <tr>
                                                     <td class="table-action" colspan="7">
-                                                        <a href="javascript:;"><i class="fa fa-plus"></i> 新增</a>
+                                                        <a href="javascript:;" v-on:click="addItem" data-toggle="modal"
+                                                           data-target=".bs-example-modal-static"><i
+                                                                class="fa fa-plus"></i> 新增</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -229,11 +225,13 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">分包单位</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname5" class="form-control" required/>
+                                        <input type="text" name="subpackage" v-model="subpackage"
+                                               class="form-control" required/>
                                     </div>
                                     <label class="col-sm-2 control-label text-center">分包项目</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname6" class="form-control" required/>
+                                        <input type="text" name="firstname6" v-model="subpackage_project"
+                                               class="form-control" required/>
                                     </div>
                                 </div>
                             </div>
@@ -242,11 +240,12 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">交付方式</label>
                                     <div class="col-sm-10">
-                                        <select class="select2" data-placeholder="选择交付方式" required>
+                                        <select class="select2" v-model="payment_way" data-placeholder="选择交付方式"
+                                                required>
                                             <option value=""></option>
-                                            <option value="ys">客户自取</option>
-                                            <option value="hp">挂号邮寄</option>
-                                            <option value="wt">其他方式</option>
+                                            <option value="0">客户自取</option>
+                                            <option value="1">挂号邮寄</option>
+                                            <option value="2">其他方式</option>
                                         </select>
                                     </div>
                                 </div>
@@ -254,29 +253,33 @@
                                     <label class="col-sm-2 control-label text-center">完成时间</label>
                                     <div class="col-sm-4">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="mm/dd/yyyy"
+                                            <input type="text" v-model="finish_date" class="form-control"
+                                                   placeholder="mm/dd/yyyy"
                                                    id="datepicker-multiple">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                         </div>
                                     </div>
                                     <label class="col-sm-2 control-label text-center">监测费用(元)</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname12" class="form-control" required/>
+                                        <input type="text" name="firstname12" v-model="payment_count"
+                                               class="form-control" required/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">客户要求</label>
                                     <div class="col-sm-10">
-                                        <div class="checkbox block"><label><input type="checkbox">
+                                        <div class="checkbox block"><label><input v-model="in_room" value="room"
+                                                                                  type="checkbox">
                                             客户需要进入实验室监视与本次委托有关的检测活动</label></div>
-                                        <div class="checkbox block"><label><input type="checkbox">
+                                        <div class="checkbox block"><label><input v-model="keep_secret" value="secret"
+                                                                                  type="checkbox">
                                             客户需要本实验室对本次委托有关资料保密</label></div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">其他约定</label>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" rows="5"></textarea>
+                                        <textarea v-model="other" class="form-control" rows="5"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -294,90 +297,132 @@
                                             <tr>
                                                 <td class="text-center" rowspan="3">甲方信息</td>
                                                 <td class="text-center">委托单位</td>
-                                                <td class="text-center" colspan="2">江苏省镇江市京口区江苏大学</td>
+                                                <td class="text-center" colspan="2">{{client_unit}}</td>
                                                 <td class="text-center">邮政编码</td>
-                                                <td class="text-center" colspan="2">212000</td>
+                                                <td class="text-center" colspan="2">{{client_code}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center">联系地址</td>
-                                                <td class="text-center" colspan="2">江苏省镇江市京口区江苏大学</td>
+                                                <td class="text-center" colspan="2">{{client_address}}</td>
                                                 <td class="text-center">联系电话</td>
-                                                <td class="text-center" colspan="2">212000</td>
+                                                <td class="text-center" colspan="2">{{client_tel}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center">联系人</td>
-                                                <td class="text-center" colspan="2">江苏省镇江市京口区江苏大学</td>
+                                                <td class="text-center" colspan="2">{{client}}</td>
                                                 <td class="text-center">传真电话</td>
-                                                <td class="text-center" colspan="2">212000</td>
+                                                <td class="text-center" colspan="2">{{client_fax}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center" rowspan="6">项目名称</td>
                                                 <td class="text-center">项目名称</td>
-                                                <td class="text-center" colspan="5">项目名称简介</td>
+                                                <td class="text-center" colspan="5">{{project_name}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center">监测目的</td>
-                                                <td class="text-center" colspan="5">监测目的简介</td>
+                                                <td class="text-center" colspan="5">{{monitor_aim}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center">监测类别</td>
-                                                <td class="text-center" colspan="5">验收监测</td>
+                                                <td class="text-center" colspan="5">{{monitor_type}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center">监测项目</td>
-                                                <td class="text-center" colspan="5">验收监测</td>
+                                                <td class="text-center" colspan="5">
+
+                                                    <div class="table-responsive">
+                                                        <table class="table  mb30">
+                                                            <thead>
+                                                            <tr>
+                                                                <th class="text-center">序号</th>
+                                                                <th class="text-center">环境要素</th>
+                                                                <th class="text-center">监测点(个)</th>
+                                                                <th class="text-center">监测项目</th>
+                                                                <th class="text-center">监测频次</th>
+                                                                <th class="text-center">备注</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <template v-for="(index,item) in item_arr">
+                                                                <tr>
+                                                                    <td class="text-center">{{index+1}}</td>
+                                                                    <td class="text-center">
+                                                                        {{item.environment_text}}
+                                                                    </td>
+                                                                    <td class="text-center">{{item.monitor_point}}</td>
+                                                                    <td class="text-center">{{item
+                                                                        .monitor_item_text}}
+                                                                    </td>
+                                                                    <td class="text-center">{{item.frequency}}</td>
+                                                                    <td class="text-center">{{item.other}}</td>
+                                                                </tr>
+                                                            </template>
+                                                            </tbody>
+                                                        </table>
+                                                    </div><!-- table-responsive -->
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center">检测方法</td>
-                                                <td class="text-center" colspan="5">以我单位通过计量认证、国家实验室认可的方法进行检测</td>
+                                                <td class="text-center" colspan="5" v-if="monitor_way==0">
+                                                    以我单位通过计量认证、国家实验室认可的方法进行检测
+                                                </td>
+                                                <td class="text-center" colspan="5" v-if="monitor_way==1">
+                                                    {{monitor_way_desp}}
+                                                </td>
+
                                             </tr>
                                             <tr>
                                                 <td class="text-center">分包单位</td>
-                                                <td class="text-center">江苏省常州市某公司</td>
+                                                <td class="text-center">{{subpackage}}</td>
                                                 <td class="text-center">分包项目</td>
-                                                <td class="text-center" colspan="3">关于xxxx的项目</td>
+                                                <td class="text-center" colspan="3">{{subpackage_project}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center" rowspan="2">报告</td>
                                                 <td class="text-center">交付方式</td>
-                                                <td class="text-center" colspan="5">客户自取</td>
+                                                <td class="text-center" colspan="5" v-if="payment_way == 0">客户自取</td>
+                                                <td class="text-center" colspan="5" v-if="payment_way == 1">挂号邮寄</td>
+                                                <td class="text-center" colspan="5" v-if="payment_way == 2">其他方式</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center">完成时间</td>
-                                                <td class="text-center" colspan="2">2017年12月31日</td>
+                                                <td class="text-center" colspan="2">{{finish_date}}</td>
                                                 <td class="text-center">监测费用(¥)</td>
-                                                <td class="text-center">123.00</td>
+                                                <td class="text-center">{{payment_count}}</td>
                                                 <td class="text-center">壹佰贰拾叁圆</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center">客户要求</td>
                                                 <td class="text-center" colspan="2">客户需要进入实验室监视与本次委托有关的检测活动</td>
-                                                <td class="text-center">否</td>
+                                                <td class="text-center" v-if="in_room!='room'">否</td>
+                                                <td class="text-center" v-if="in_room=='room'">是</td>
                                                 <td class="text-center" colspan="2">客户需要本实验室对本次委托有关资料保密</td>
-                                                <td class="text-center">否</td>
+                                                <td class="text-center" v-if="keep_secret!='secret'">否</td>
+                                                <td class="text-center" v-if="keep_secret=='secret'">是</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center">其他约定</td>
-                                                <td colspan="7">这里是和客户进行其他约定的地方,这里是和客户进行其他约定的地方,这里是和客户进行其他约定的地方.</td>
+                                                <td colspan="7">{{other}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center" rowspan="3">乙方信息</td>
                                                 <td class="text-center">受托单位</td>
-                                                <td class="text-center" colspan="2">江苏省镇江市京口区江苏大学</td>
+                                                <td class="text-center" colspan="2">{{trustee_unit}}</td>
                                                 <td class="text-center">邮政编码</td>
-                                                <td class="text-center" colspan="2">212000</td>
+                                                <td class="text-center" colspan="2">{{trustee_code}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center">联系地址</td>
-                                                <td class="text-center" colspan="2">江苏省镇江市京口区江苏大学</td>
+                                                <td class="text-center" colspan="2">{{trustee_address}}</td>
                                                 <td class="text-center">联系电话</td>
-                                                <td class="text-center" colspan="2">212000</td>
+                                                <td class="text-center" colspan="2">{{trustee_tel}}</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center">承办人</td>
-                                                <td class="text-center" colspan="2">江苏省镇江市京口区江苏大学</td>
+                                                <td class="text-center" colspan="2">{{trustee}}</td>
                                                 <td class="text-center">传真电话</td>
-                                                <td class="text-center" colspan="2">212000</td>
+                                                <td class="text-center" colspan="2">{{trustee_fax}}</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -391,8 +436,8 @@
                     <ul class="pager wizard">
                         <li class="previous"><a href="javascript:void(0)">上一项</a></li>
                         <li class="next"><a href="javascript:void(0)">下一项</a></li>
-                        <li class="draft"><a href="javascript:void(0)">存为草稿</a></li>
-                        <li class="finish"><a href="javascript:void(0)">完成创建</a></li>
+                        <li class="draft"><a href="javascript:void(0)" @click="saveAsDraft">存为草稿</a></li>
+                        <li class="finish"><a href="javascript:void(0)" @click="saveAsProject">完成创建</a></li>
                     </ul>
 
                 </div><!-- #validationWizard -->
@@ -426,6 +471,7 @@
             onInit: function () {
                 jQuery('.wizard .finish').hide();
                 jQuery('.wizard .draft').hide();
+                jQuery('.wizard .previous').hide();
             },
             onTabClick: function (tab, navigation, index) {
                 return false;
@@ -436,11 +482,11 @@
                 var $percent = ($current / $total) * 100;
                 jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
 
-//                var $valid = jQuery('#firstForm').valid();
-//                if (!$valid) {
-//                    $validator.focusInvalid();
-//                    return false;
-//                }
+                var $valid = jQuery('#firstForm').valid();
+                if (!$valid) {
+                    $validator.focusInvalid();
+                    return false;
+                }
 
                 if (index >= 3) {
                     jQuery('.wizard .finish').show();
@@ -449,6 +495,17 @@
                     jQuery('.wizard .finish').hide();
                     jQuery('.wizard .draft').hide();
                 }
+                if (index == 3) {
+                    jQuery('.wizard .next').hide();
+                } else {
+                    jQuery('.wizard .next').show();
+                }
+                if (index == 0) {
+                    jQuery('.wizard .previous').hide();
+                } else {
+                    jQuery('.wizard .previous').show();
+                }
+                adjustmainpanelheight();
             },
             onPrevious: function (tab, navigation, index) {
                 var $total = navigation.find('li').length;
@@ -462,6 +519,20 @@
                     jQuery('.wizard .finish').hide();
                     jQuery('.wizard .draft').hide();
                 }
+                if (index == 0) {
+                    jQuery('.wizard .next').hide();
+                }
+                if (index == 3) {
+                    jQuery('.wizard .next').hide();
+                } else {
+                    jQuery('.wizard .next').show();
+                }
+                if (index == 0) {
+                    jQuery('.wizard .previous').hide();
+                } else {
+                    jQuery('.wizard .previous').show();
+                }
+                adjustmainpanelheight();
             },
             onTabShow: function (tab, navigation, index) {
                 var $total = navigation.find('li').length;
@@ -481,7 +552,7 @@
         });
 
 
-        window.vue = new Vue({
+        var vue = new Vue({
             me: this,
             el: '#contentpanel',
             data: {
@@ -496,7 +567,45 @@
                 "trustee_address": "",
                 "trustee_tel": "",
                 "trustee": "",
-                "trustee_fax": ""
+                "trustee_fax": "",
+                "project_name": "",
+                "monitor_aim": "",
+                "monitor_type": "",
+                "monitor_way": "",
+                "monitor_way_desp": "",
+                "subpackage": "",
+                "subpackage_project": "",
+                "item_arr": [{
+                    environment: 3,
+                    environment_text: '地点1,地点2',
+                    monitor_point: '1次/月份',
+                    monitor_item: 3,
+                    monitor_item_text: '废气项目1',
+                    frequency: '1次/月份',
+                    other: '其他'
+                }, {
+                    environment: 3,
+                    environment_text: '地点13,地点23',
+                    monitor_point: '1次/月份',
+                    monitor_item: 3,
+                    monitor_item_text: '废气项目1',
+                    frequency: '1次/月份',
+                    other: '其他'
+                }, {
+                    environment: 3,
+                    environment_text: '地点14,地点24',
+                    monitor_point: '1次/月份',
+                    monitor_item: 3,
+                    monitor_item_text: '废气项目1',
+                    frequency: '1次/月份',
+                    other: '其他'
+                }],
+                payment_way: "1",
+                finish_date: "12/21/1992",
+                payment_count: "230.12",
+                in_room: "room",
+                keep_secret: "secret",
+                other: "其他备注信息"
             },
             methods: {
                 default_info: function () {
@@ -520,9 +629,161 @@
                     });
                 },
                 open_dialog: function () {
-                    LIMS.dialog.$set('title', '从客户管理系统中导入');
-                    LIMS.dialog.$set('template', 'aaa');
+                    var me = this;
 
+                    me.$http.get("/assets/json/customer_select_list.json").then(function (response) {
+                        var data = response.data;
+                        var template = jQuery.fn.loadTemplate("/assets/template/subject/customer_select_list.tpl");
+
+                        Vue.component('child', {
+                            template: template,
+                            data: function () {
+                                return {customers: data.results};
+                            },
+                            methods: {
+                                startSearch: function (event) {
+                                    //向服务器发送查询请求
+                                    alert("触发了enter操作");
+                                },
+                                choose: function (data) {
+                                    //console.log(data)
+                                    var customer = data.customer;
+                                    jQuery("#custom_modal").modal("hide");
+                                    jQuery.fn.check_msg({
+                                        msg: "是否导入【" + customer.client_unit + "】公司的客户资料?",
+                                        success: function () {
+                                            for (var key in customer) {
+                                                me.$set(key, customer[key]);
+                                            }
+
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                        LIMS.dialog.$set('title', '从客户管理系统中导入');
+                        LIMS.dialog.currentView = 'child';
+                    }, function (response) {
+                        //error
+                    });
+
+
+                },
+                addItem: function () {
+                    var me = this;
+                    me.$http.get("/assets/json/contract_addItem.json").then(function (response) {
+
+                        var data = response.data;
+                        var template = jQuery.fn.loadTemplate("/assets/template/subject/contract_monitor_addItem.tpl");
+
+                        Vue.component("addItem", {
+                            template: template,
+                            data: function () {
+                                return {
+                                    environment: "",
+                                    monitor_point: "",
+                                    monitor_type: "",
+                                    monitor_item: "",
+                                    frequency: "",
+                                    other: "",
+                                    monitor_type_item: data.monitor_type_item,
+                                    frequency_item: data.frequency_item
+                                }
+                            },
+                            methods: {
+                                save: function () {
+                                    var dom = $(this.$el);
+                                    var data = {
+                                        environment: dom.find("select[name=environment]").val(),
+                                        environment_text: dom.find("select[name=environment] option:selected").html(),
+                                        monitor_point: dom.find("#tags").val(),
+                                        monitor_item: dom.find("#monitor_item").val(),
+                                        monitor_item_text: dom.find("#monitor_item option:selected").html(),
+                                        frequency: dom.find("select[name=frequency]").val(),
+                                        other: this.other
+                                    };
+                                    console.log(data);
+                                    me.item_arr.push(data);
+                                    console.log(data);
+                                    jQuery.fn.alert_msg("检测项保存成功!");
+                                },
+                                cancel: function () {
+                                    jQuery("#custom_modal").modal("hide");
+                                }
+                            },
+                            ready: function () {
+                                var dom = $(this.$el);
+                                dom.find('.select2').select2({
+                                    width: '100%',
+                                    minimumResultsForSearch: -1
+                                });
+                                dom.find('#tags').tagsInput({
+                                    width: 'auto',
+                                    defaultText: '增加...'
+                                });
+                                dom.find('select[name=environment]').on("change", function (event) {
+                                    var id = event.val;
+                                    var items = data.monitor_type_item.find(function (item) {
+                                        return item.id == id;
+                                    });
+                                    var oSelect = jQuery("#monitor_item");
+                                    oSelect.find('option').remove();
+                                    items.items.forEach(function (item) {
+                                        console.log(item);
+                                        oSelect.append("<option value='" + item.id + "'>" + item.name + "</option>");
+                                    });
+                                    $('#monitor_item').trigger("change");
+                                })
+                            }
+                        });
+
+
+                        LIMS.dialog.$set('title', '设置项目检测项');
+                        LIMS.dialog.currentView = 'addItem';
+                    }, function (response) {
+
+                    });
+
+
+                },
+                delete_item: function (item) {
+                    var me = this;
+                    jQuery.fn.check_msg({
+                        msg: "是否删除当前选中监测项目?",
+                        success: function () {
+                            me.item_arr.$remove(item);
+                            jQuery.fn.alert_msg("监测项目删除成功!");
+                        }
+                    })
+                },
+                sort_up: function (index) {
+
+                    var upper = this.item_arr[index - 1];
+                    var value = this.item_arr[index];
+                    this.item_arr.$set(index, upper);
+                    this.item_arr.$set(index - 1, value);
+                },
+                sort_down: function (index) {
+                    var upper = this.item_arr[index + 1];
+                    var value = this.item_arr[index];
+                    this.item_arr.$set(index, upper);
+                    this.item_arr.$set(index + 1, value);
+                },
+                saveAsDraft: function () {
+                    jQuery.fn.check_msg({
+                        msg: "是否将合同保存为草稿？您可以在\"草稿合同\"列表中查看、修改或进入项目流中。",
+                        success: function () {
+                            jQuery.fn.alert_msg("合同保存草稿成功！");
+                        }
+                    });
+                },
+                saveAsProject: function () {
+                    jQuery.fn.check_msg({
+                        msg: "您即将创建一份全新的合同,创建完成之后将进入项目流中,是否创建？",
+                        success: function () {
+                            jQuery.fn.alert_msg("合同创建成功！");
+                        }
+                    });
                 }
             },
             ready: function () {
@@ -531,12 +792,25 @@
                     for (var key in data) {
                         var value = data[key];
                         this.$set(key, value);
+                        if (key == 'monitor_type') {
+                            $('#monitor_type').find('option[value="' + value + '"]').prop("selected", "selected");
+                            $('#monitor_type').trigger("change");
+                        }
                     }
-
-                    //this.data = data;
+                    $('.select2').trigger("change");
                 }, function (response) {
                     //handle error
                 });
+
+
+            }
+        });
+
+        vue.$watch('monitor_way', function (val) {
+            if (this.monitor_way == 0) {
+                jQuery('input[name=monitor_way_desp]').prop("disabled", true);
+            } else {
+                jQuery('input[name=monitor_way_desp]').prop("disabled", false);
             }
         });
         //console.log(JSON.parse(JSON.stringify(vue._data)));

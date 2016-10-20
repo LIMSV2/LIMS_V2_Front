@@ -19,6 +19,8 @@
     <link href="/assets/css/jquery.gritter.css" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/bootstrap-wysihtml5.css"/>
+
+    <link rel="stylesheet" href="/assets/css/jquery.tagsinput.css" />
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="/assets/js/html5shiv.js"></script>
@@ -765,7 +767,8 @@
                     <h4 class="modal-title">{{title}}</h4>
                 </div>
                 <div class="modal-body">
-                    {{template}}
+                    <!--{{{template}}}-->
+                    <component :is="currentView"></component>
                 </div>
             </div>
         </div>
@@ -799,6 +802,8 @@
 <!--弹出层-->
 <script src="/assets/js/jquery.gritter.min.js"></script>
 
+<!--Tag输入框-->
+<script src="/assets/js/jquery.tagsinput.min.js"></script>
 
 <script src="/assets/js/custom.js"></script>
 <script type="text/javascript">
@@ -875,7 +880,12 @@
                         console.log(page.getCurrent());
                     }
                 });
-
+                //绑定鼠标移入显示"操作"按钮
+                jQuery('.table-hidaction tbody tr').hover(function () {
+                    jQuery(this).find('.table-action-hide a').animate({opacity: 1});
+                }, function () {
+                    jQuery(this).find('.table-action-hide a').animate({opacity: 0});
+                });
             }
         });
 
@@ -977,8 +987,7 @@
             el: '#custom_modal',
             data: {
                 title: 'default',
-                template: '',
-                other: ''
+                currentView: ''
             },
             methods: {
                 success: function (event) {
@@ -988,14 +997,6 @@
             }
         });
     });
-</script>
-
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-        "use strict";
-
-    });
-
 </script>
 <script type="text/html" id="modal_body"></script>
 </body>
