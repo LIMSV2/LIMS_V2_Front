@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
+var path = require("path");
 module.exports = {
     devtool: "source-map",
     //插件项
@@ -21,10 +22,14 @@ module.exports = {
         //加载器配置
         loaders: [
             {test: /\.css$/, loader: 'style-loader!css-loader'},
-            {test: /\.js$/, loaders:['jsx-loader?harmony']},
+            {test: /\.tpl$/, loader: 'html'},
+            {
+                test: /\.js$/,
+                loaders: ['jsx-loader?harmony'],
+            },
             // { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
             {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
-            {test: /\.vue$/, loader: 'vue'}
+            {test: /\.vue$/, loader: 'html'}
         ]
     },
     //其它解决方案配置
