@@ -177,7 +177,7 @@
                         LIMS.dialog_lg.$set('title', '查看合同详情');
                         LIMS.dialog_lg.currentView = 'contract_view';
                     }, function (response) {
-
+                        jQuery.fn.error_msg("合同数据请求异常,请刷新后重新尝试。");
                     });
 
 
@@ -238,10 +238,8 @@
                     });
 
                 }, function (response) {
-
+                    jQuery.fn.error_msg("数据请求异常,请刷新后重新尝试。");
                 });
-
-
             }
         });
     });
