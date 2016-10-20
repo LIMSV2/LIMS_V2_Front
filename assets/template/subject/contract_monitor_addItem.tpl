@@ -21,17 +21,15 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <strong>监测点输入完成之后回车可以多次输入!</strong>
             </div>
-            <input name="tags" id="tags" class="form-control"  v-model="monitor_point" value=""/>
+            <input name="tags" id="tags" class="form-control" v-model="monitor_point" value=""/>
         </div>
     </div>
     <div class="form-group">
-
         <label class="col-sm-2 control-label">监测项目</label>
         <div class="col-sm-10">
             <select class="select2"
-                    data-placeholder="选择监测项目" id="monitor_item"  v-model="monitor_item"
+                    data-placeholder="选择监测项目" multiple id="monitor_item" v-model="monitor_item"
                     required>
-                <option></option>
             </select>
         </div>
     </div>

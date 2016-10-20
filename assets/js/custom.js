@@ -390,6 +390,18 @@ jQuery(document).ready(function () {
         });
     };
 
+    jQuery.fn.error_msg = function (text) {
+        jQuery.gritter.add({
+            title: "很抱歉",
+            text: text,
+            class_name: 'growl-danger',
+            image: '/assets/images/screen.png',
+            sticky: false,
+            time: ''
+        });
+        return false;
+    };
+
     jQuery.fn.select_all = function (name, type) {
         if (type == "all") {
             jQuery('[name=' + name + ']').each(function (index, oCheckbox) {

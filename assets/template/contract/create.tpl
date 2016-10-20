@@ -192,8 +192,10 @@
                                                             {{item.environment_text}}
                                                         </td>
                                                         <td class="text-center">{{item.monitor_point}}</td>
-                                                        <td class="text-center">{{item
-                                                            .monitor_item_text}}
+                                                        <td class="text-center">
+                                                            <template v-for="item in item.monitor_item_text">
+                                                                {{item.name}}
+                                                            </template>
                                                         </td>
                                                         <td class="text-center">{{item.frequency}}</td>
                                                         <td class="text-center">{{item.other}}</td>
@@ -226,12 +228,12 @@
                                     <label class="col-sm-2 control-label text-center">分包单位</label>
                                     <div class="col-sm-4">
                                         <input type="text" name="subpackage" v-model="subpackage"
-                                               class="form-control" required/>
+                                               class="form-control"/>
                                     </div>
                                     <label class="col-sm-2 control-label text-center">分包项目</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname6" v-model="subpackage_project"
-                                               class="form-control" required/>
+                                        <input type="text" name="subpackage_project" v-model="subpackage_project"
+                                               class="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -261,7 +263,7 @@
                                     </div>
                                     <label class="col-sm-2 control-label text-center">监测费用(元)</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="firstname12" v-model="payment_count"
+                                        <input type="text" name="payment_count" v-model="payment_count"
                                                class="form-control" required/>
                                     </div>
                                 </div>
@@ -456,168 +458,45 @@
     jQuery(document).ready(function () {
         "use strict";
         // 带有表单验证的流程图
-        var $validator = jQuery("#firstForm").validate({
-            highlight: function (element) {
-                jQuery(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-            },
-            success: function (element) {
-                jQuery(element).closest('.form-group').removeClass('has-error');
-            }
-        });
-
-        jQuery('#validationWizard').bootstrapWizard({
-            tabClass: 'nav nav-pills nav-justified nav-disabled-click',
-            'nextSelector': '.next',
-            'previousSelector': '.previous',
-            onInit: function () {
-                jQuery('.wizard .finish').hide();
-                jQuery('.wizard .draft').hide();
-                jQuery('.wizard .print').hide();
-                jQuery('.wizard .previous').hide();
-            },
-            onTabClick: function (tab, navigation, index) {
-                return false;
-            },
-            onNext: function (tab, navigation, index) {
-                var $total = navigation.find('li').length;
-                var $current = index + 1;
-                var $percent = ($current / $total) * 100;
-                jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
-
-                var $valid = jQuery('#firstForm').valid();
-                if (!$valid) {
-                    $validator.focusInvalid();
-                    return false;
-                }
-
-                if (index >= 3) {
-                    jQuery('.wizard .finish').show();
-                    jQuery('.wizard .draft').show();
-                    jQuery('.wizard .print').show();
-                } else {
-                    jQuery('.wizard .finish').hide();
-                    jQuery('.wizard .draft').hide();
-                    jQuery('.wizard .print').hide();
-                }
-                if (index == 3) {
-                    jQuery('.wizard .next').hide();
-                } else {
-                    jQuery('.wizard .next').show();
-                }
-                if (index == 0) {
-                    jQuery('.wizard .previous').hide();
-                } else {
-                    jQuery('.wizard .previous').show();
-                }
-                adjustmainpanelheight();
-            },
-            onPrevious: function (tab, navigation, index) {
-                var $total = navigation.find('li').length;
-                var $current = index + 1;
-                var $percent = ($current / $total) * 100;
-                jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
-                if (index >= 3) {
-                    jQuery('.wizard .finish').show();
-                    jQuery('.wizard .draft').show();
-                    jQuery('.wizard .print').hide();
-                } else {
-                    jQuery('.wizard .finish').hide();
-                    jQuery('.wizard .draft').hide();
-                    jQuery('.wizard .print').hide();
-                }
-                if (index == 0) {
-                    jQuery('.wizard .next').hide();
-                }
-                if (index == 3) {
-                    jQuery('.wizard .next').hide();
-                } else {
-                    jQuery('.wizard .next').show();
-                }
-                if (index == 0) {
-                    jQuery('.wizard .previous').hide();
-                } else {
-                    jQuery('.wizard .previous').show();
-                }
-                adjustmainpanelheight();
-            },
-            onTabShow: function (tab, navigation, index) {
-                var $total = navigation.find('li').length;
-                var $current = index + 1;
-                var $percent = ($current / $total) * 100;
-                jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
-            }
-        });
-
-        jQuery(".select2").select2({
-            width: '100%',
-            minimumResultsForSearch: -1
-        });
-        jQuery('#datepicker-multiple').datepicker({
-            numberOfMonths: 3,
-            showButtonPanel: true
-        });
-
-
         var vue = new Vue({
             me: this,
             el: '#contentpanel',
             data: {
-                "client_unit": "",
-                "client_code": "",
-                "client_address": "",
-                "client_tel": "",
-                "client": "",
-                "client_fax": "",
-                "trustee_unit": "",
-                "trustee_code": "",
-                "trustee_address": "",
-                "trustee_tel": "",
-                "trustee": "",
-                "trustee_fax": "",
-                "project_name": "",
-                "monitor_aim": "",
-                "monitor_type": "",
-                "monitor_way": "",
-                "monitor_way_desp": "",
-                "subpackage": "",
-                "subpackage_project": "",
-                "item_arr": [{
-                    environment: 3,
-                    environment_text: '地点1,地点2',
-                    monitor_point: '1次/月份',
-                    monitor_item: 3,
-                    monitor_item_text: '废气项目1',
-                    frequency: '1次/月份',
-                    other: '其他'
-                }, {
-                    environment: 3,
-                    environment_text: '地点13,地点23',
-                    monitor_point: '1次/月份',
-                    monitor_item: 3,
-                    monitor_item_text: '废气项目1',
-                    frequency: '1次/月份',
-                    other: '其他'
-                }, {
-                    environment: 3,
-                    environment_text: '地点14,地点24',
-                    monitor_point: '1次/月份',
-                    monitor_item: 3,
-                    monitor_item_text: '废气项目1',
-                    frequency: '1次/月份',
-                    other: '其他'
-                }],
-                payment_way: "1",
-                finish_date: "12/21/1992",
-                payment_count: "230.12",
-                in_room: "room",
-                keep_secret: "secret",
-                other: "其他备注信息"
+                client_unit: "",
+                client_code: "",
+                client_address: "",
+                client_tel: "",
+                client: "",
+                client_fax: "",
+                trustee_unit: "",
+                trustee_code: "",
+                trustee_address: "",
+                trustee_tel: "",
+                trustee: "",
+                trustee_fax: "",
+                project_name: "",
+                monitor_aim: "",
+                monitor_type: "",
+                monitor_way: "",
+                monitor_way_desp: "",
+                subpackage: "",
+                subpackage_project: "",
+                item_arr: [],
+                payment_way: "",
+                finish_date: "",
+                payment_count: "",
+                in_room: "",
+                keep_secret: "",
+                other: ""
             },
             methods: {
+                /**
+                 * 获取预设乙方信息
+                 */
                 default_info: function () {
                     var me = this;
                     jQuery.fn.check_msg({
-                        msg: '是否导入系统预设的乙方信息？已经填写的信息将会被覆盖。',
+                        msg: '是否导入系统预设的乙方信息？已填信息将会被覆盖。',
                         success: function () {
                             me.$http.get('/assets/json/contract_default.json').then(function (response) {
                                 var data = response.data;
@@ -626,14 +505,16 @@
                                     me.$set(key, value);
                                 }
                             }, function (response) {
-                                //error handle
-
+                                jQuery.fn.error_msg("服务器无法获取预设信息！");
                             })
 
 
                         }
                     });
                 },
+                /**
+                 * 导入甲方客户资料
+                 */
                 open_dialog: function () {
                     var me = this;
 
@@ -671,10 +552,14 @@
                         LIMS.dialog.currentView = 'child';
                     }, function (response) {
                         //error
+                        jQuery.fn.error_msg("客户资料获取失败！");
                     });
 
 
                 },
+                /**
+                 * 增加检测项
+                 */
                 addItem: function () {
                     var me = this;
                     me.$http.get("/assets/json/contract_addItem.json").then(function (response) {
@@ -699,16 +584,25 @@
                             methods: {
                                 save: function () {
                                     var dom = $(this.$el);
+                                    var items = [];
+                                    dom.find('#monitor_item option:selected').each(function (index, item) {
+                                        var dom = jQuery(item);
+                                        var temp = {
+                                            id: dom.attr("value"),
+                                            name: dom.html()
+                                        };
+                                        items.push(temp);
+                                    });
+
                                     var data = {
                                         environment: dom.find("select[name=environment]").val(),
                                         environment_text: dom.find("select[name=environment] option:selected").html(),
                                         monitor_point: dom.find("#tags").val(),
                                         monitor_item: dom.find("#monitor_item").val(),
-                                        monitor_item_text: dom.find("#monitor_item option:selected").html(),
+                                        monitor_item_text: items,
                                         frequency: dom.find("select[name=frequency]").val(),
                                         other: this.other
                                     };
-                                    console.log(data);
                                     me.item_arr.push(data);
                                     console.log(data);
                                     jQuery.fn.alert_msg("检测项保存成功!");
@@ -752,6 +646,10 @@
 
 
                 },
+                /**
+                 * 删除检测项
+                 * @param item
+                 */
                 delete_item: function (item) {
                     var me = this;
                     jQuery.fn.check_msg({
@@ -762,6 +660,10 @@
                         }
                     })
                 },
+                /**
+                 * 检测项上移一位
+                 * @param index
+                 */
                 sort_up: function (index) {
 
                     var upper = this.item_arr[index - 1];
@@ -769,12 +671,19 @@
                     this.item_arr.$set(index, upper);
                     this.item_arr.$set(index - 1, value);
                 },
+                /**
+                 * 检测项下移一位
+                 * @param index
+                 */
                 sort_down: function (index) {
                     var upper = this.item_arr[index + 1];
                     var value = this.item_arr[index];
                     this.item_arr.$set(index, upper);
                     this.item_arr.$set(index + 1, value);
                 },
+                /**
+                 * 以草稿保存
+                 */
                 saveAsDraft: function () {
                     jQuery.fn.check_msg({
                         msg: "是否将合同保存为草稿？您可以在\"草稿合同\"列表中查看、修改或进入项目流中。",
@@ -783,6 +692,9 @@
                         }
                     });
                 },
+                /**
+                 * 保存并进入流程中
+                 */
                 saveAsProject: function () {
                     jQuery.fn.check_msg({
                         msg: "您即将创建一份全新的合同,创建完成之后将进入项目流中,是否创建？",
@@ -791,6 +703,9 @@
                         }
                     });
                 },
+                /**
+                 * 打印导出报告
+                 */
                 print: function () {
                     jQuery.fn.check_msg({
                         msg: "是否打印当前合同？",
@@ -800,7 +715,111 @@
                     });
                 }
             },
+            /**
+             * 页面加载完成,执行ready操作
+             */
             ready: function () {
+                var $validator = jQuery("#firstForm").validate({
+                    highlight: function (element) {
+                        jQuery(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                    },
+                    success: function (element) {
+                        jQuery(element).closest('.form-group').removeClass('has-error');
+                    }
+                });
+
+                jQuery('#validationWizard').bootstrapWizard({
+                    tabClass: 'nav nav-pills nav-justified nav-disabled-click',
+                    'nextSelector': '.next',
+                    'previousSelector': '.previous',
+                    onInit: function () {
+                        jQuery('.wizard .finish').hide();
+                        jQuery('.wizard .draft').hide();
+                        jQuery('.wizard .print').hide();
+                        jQuery('.wizard .previous').hide();
+                    },
+                    onTabClick: function (tab, navigation, index) {
+                        return false;
+                    },
+                    onNext: function (tab, navigation, index) {
+                        var $total = navigation.find('li').length;
+                        var $current = index + 1;
+                        var $percent = ($current / $total) * 100;
+                        jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
+
+                        var $valid = jQuery('#firstForm').valid();
+                        if (!$valid) {
+                            $validator.focusInvalid();
+                            return false;
+                        }
+
+                        if (index >= 3) {
+                            jQuery('.wizard .finish').show();
+                            jQuery('.wizard .draft').show();
+                            jQuery('.wizard .print').show();
+                        } else {
+                            jQuery('.wizard .finish').hide();
+                            jQuery('.wizard .draft').hide();
+                            jQuery('.wizard .print').hide();
+                        }
+                        if (index == 3) {
+                            jQuery('.wizard .next').hide();
+                        } else {
+                            jQuery('.wizard .next').show();
+                        }
+                        if (index == 0) {
+                            jQuery('.wizard .previous').hide();
+                        } else {
+                            jQuery('.wizard .previous').show();
+                        }
+                        adjustmainpanelheight();
+                    },
+                    onPrevious: function (tab, navigation, index) {
+                        var $total = navigation.find('li').length;
+                        var $current = index + 1;
+                        var $percent = ($current / $total) * 100;
+                        jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
+                        if (index >= 3) {
+                            jQuery('.wizard .finish').show();
+                            jQuery('.wizard .draft').show();
+                            jQuery('.wizard .print').hide();
+                        } else {
+                            jQuery('.wizard .finish').hide();
+                            jQuery('.wizard .draft').hide();
+                            jQuery('.wizard .print').hide();
+                        }
+                        if (index == 0) {
+                            jQuery('.wizard .next').hide();
+                        }
+                        if (index == 3) {
+                            jQuery('.wizard .next').hide();
+                        } else {
+                            jQuery('.wizard .next').show();
+                        }
+                        if (index == 0) {
+                            jQuery('.wizard .previous').hide();
+                        } else {
+                            jQuery('.wizard .previous').show();
+                        }
+                        adjustmainpanelheight();
+                    },
+                    onTabShow: function (tab, navigation, index) {
+                        var $total = navigation.find('li').length;
+                        var $current = index + 1;
+                        var $percent = ($current / $total) * 100;
+                        jQuery('#validationWizard').find('.progress-bar').css('width', $percent + '%');
+                    }
+                });
+
+                jQuery(".select2").select2({
+                    width: '100%',
+                    minimumResultsForSearch: -1
+                });
+                jQuery('#datepicker-multiple').datepicker({
+                    numberOfMonths: 3,
+                    showButtonPanel: true
+                });
+
                 this.$http.get('/assets/json/contract_create.json').then(function (response) {
                     var data = response.data;
                     for (var key in data) {
@@ -816,17 +835,14 @@
                     //handle error
                 });
 
-
+                this.$watch('monitor_way', function (val) {
+                    if (this.monitor_way == 0) {
+                        jQuery('input[name=monitor_way_desp]').prop("disabled", true);
+                    } else {
+                        jQuery('input[name=monitor_way_desp]').prop("disabled", false);
+                    }
+                });
             }
         });
-
-        vue.$watch('monitor_way', function (val) {
-            if (this.monitor_way == 0) {
-                jQuery('input[name=monitor_way_desp]').prop("disabled", true);
-            } else {
-                jQuery('input[name=monitor_way_desp]').prop("disabled", false);
-            }
-        });
-        //console.log(JSON.parse(JSON.stringify(vue._data)));
     });
 </script>
