@@ -73,14 +73,14 @@
                 <li class="nav-parent"><a href="javascript:;"><i class="fa fa-edit"></i> <span>合同管理</span></a>
                     <ul class="children" data-icon="fa fa-edit">
                         <li>
-                            <router-link to="/foo" class="nav-item" data-type="contract/create" data-title="合同起草"
+                            <a href="javascript:;" class="nav-item" data-type="create" data-title="合同起草"
                                          data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同起草
-                            </router-link>
+                            </a>
                         </li>
                         <li>
-                            <router-link to="/bar" class="nav-item" data-type="contract/search" data-title="合同查询"
+                            <a href="javascript:;" class="nav-item" data-type="search" data-title="合同查询"
                                          data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同查询
-                            </router-link>
+                            </a>
                         </li>
                         <li><a href="javascript:;" class="nav-item" data-type="contract/change" data-title="合同变更"
                                data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同变更 </a></li>
@@ -447,7 +447,7 @@
 
         <div class="contentpanel" id="contentpanel">
             <!-- 通过template进行渲染 -->
-            <router-view></router-view>
+            <!--<component :is="currentView"></component>-->
         </div>
 
     </div><!-- mainpanel -->

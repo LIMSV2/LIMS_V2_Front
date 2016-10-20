@@ -19,6 +19,8 @@
     <link href="/assets/css/jquery.gritter.css" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/bootstrap-wysihtml5.css"/>
+
+    <link rel="stylesheet" href="/assets/css/jquery.tagsinput.css"/>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="/assets/js/html5shiv.js"></script>
@@ -80,6 +82,8 @@
                                data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 合同变更 </a></li>
                         <li><a href="javascript:;" class="nav-item" data-type="contract/draft" data-title="草稿合同"
                                data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 草稿合同 </a></li>
+                        <li><a href="javascript:;" class="nav-item" data-type="contract/preInfo" data-title="预设信息管理"
+                               data-desp="此处省略15个字"><i class="fa fa-caret-right"></i> 预设信息管理 </a></li>
                     </ul>
                 </li>
                 <li class="nav-parent"><a href=""><i class="fa fa-flask"></i> <span>样品管理</span></a>
@@ -765,7 +769,23 @@
                     <h4 class="modal-title">{{title}}</h4>
                 </div>
                 <div class="modal-body">
-                    {{template}}
+                    <!--{{{template}}}-->
+                    <component :is="currentView"></component>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--大的模态-->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+         aria-hidden="true" id="custom_lg_modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+                    <h4 class="modal-title">{{title}}</h4>
+                </div>
+                <div class="modal-body">
+                    <component :is="currentView"></component>
                 </div>
             </div>
         </div>
@@ -799,6 +819,8 @@
 <!--弹出层-->
 <script src="/assets/js/jquery.gritter.min.js"></script>
 
+<!--Tag输入框-->
+<script src="/assets/js/jquery.tagsinput.min.js"></script>
 
 <script src="/assets/js/custom.js"></script>
 <script type="text/javascript">
@@ -875,7 +897,12 @@
                         console.log(page.getCurrent());
                     }
                 });
-
+                //绑定鼠标移入显示"操作"按钮
+                jQuery('.table-hidaction tbody tr').hover(function () {
+                    jQuery(this).find('.table-action-hide a').animate({opacity: 1});
+                }, function () {
+                    jQuery(this).find('.table-action-hide a').animate({opacity: 0});
+                });
             }
         });
 
@@ -977,8 +1004,20 @@
             el: '#custom_modal',
             data: {
                 title: 'default',
-                template: '',
-                other: ''
+                currentView: ''
+            },
+            methods: {
+                success: function (event) {
+                    //成功时执行的内容
+
+                }
+            }
+        });
+        LIMS.dialog_lg = new Vue({
+            el: '#custom_lg_modal',
+            data: {
+                title: 'default',
+                currentView: ''
             },
             methods: {
                 success: function (event) {
@@ -988,14 +1027,6 @@
             }
         });
     });
-</script>
-
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-        "use strict";
-
-    });
-
 </script>
 <script type="text/html" id="modal_body"></script>
 </body>

@@ -12,7 +12,7 @@ jQuery(document).ready(function () {
 
     "use strict";
     var LIMS = window.LIMS = {};
-    
+
 
     // Toggle Left Menu
     jQuery('.leftpanel .nav-parent > a').live('click', function () {
@@ -56,6 +56,8 @@ jQuery(document).ready(function () {
         if (docHeight > jQuery('.mainpanel').height())
             jQuery('.mainpanel').height(docHeight);
     }
+
+    window.adjustmainpanelheight = adjustmainpanelheight;
 
     adjustmainpanelheight();
 
@@ -388,6 +390,18 @@ jQuery(document).ready(function () {
         });
     };
 
+    jQuery.fn.error_msg = function (text) {
+        jQuery.gritter.add({
+            title: "很抱歉",
+            text: text,
+            class_name: 'growl-danger',
+            image: '/assets/images/screen.png',
+            sticky: false,
+            time: ''
+        });
+        return false;
+    };
+
     jQuery.fn.select_all = function (name, type) {
         if (type == "all") {
             jQuery('[name=' + name + ']').each(function (index, oCheckbox) {
@@ -441,6 +455,12 @@ jQuery(document).ready(function () {
             opt[502] ? opt[502]() : jQuery.fn.alert_msg('请求异常,请重新尝试操作！', 'error');
         }
     };
+
+
+    //执行自动调整高度,2秒执行一次 
+    setInterval(function () {
+        adjustmainpanelheight();
+    }, 2000);
 });
 
 

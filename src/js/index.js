@@ -1,10 +1,18 @@
-require("jquery");
+var jQuery = require("jquery");
 require('bootstrap');
 require("migrate");
 require('imports?this=>window!modernizr');
 require("sparkline");
 require("toggles");
 require("cookies");
+
+require("./plugins/bootstrap-wizard.min");
+require("./plugins/jquery-ui-1.10.3.min");
+require("./plugins/jquery.validate.min");
+//    require("../../js/plugins/messages_zh");
+require("./plugins/select2.min");
+
+
 var Vue = require("vue");
 var VueRouter = require("vue-router");
 /**
@@ -13,18 +21,18 @@ var VueRouter = require("vue-router");
 jQuery(document).ready(function () {
     //定义路由规则
     //path:路由的路径  component: *.vue的路径或者直接手写template
-    const routes = [
-        {path: '/foo', component: require('../components/contract/create.vue')},
-        {path: '/bar', component: {template: '<div>bar</div>'}}
-    ];
-    //Vue路由
-    Vue.use(VueRouter);
-    const router = new VueRouter({
-        routes // （缩写）相当于 routes: routes
-    });
-    const app = new Vue({
-        router
-    }).$mount('#container');
+    // const routes = [
+    //     {path: '/foo', component: require('../components/contract/create.vue')},
+    //     {path: '/bar', component: {template: '<div>bar</div>'}}
+    // ];
+    // //Vue路由
+    // Vue.use(VueRouter);
+    // const router = new VueRouter({
+    //     routes // （缩写）相当于 routes: routes
+    // });
+    // const app = new Vue({
+    //     router
+    // }).$mount('#container');
 
 
     //关闭加载load进度条
@@ -485,21 +493,21 @@ jQuery(document).ready(function () {
     }
 
 
-    //var App = require('../components/contract/create.vue');
-
-
-    // var vue = Vue.extend({});
-    //
-    // var App = require('../components/contract/create.vue');
-    // var routes = [
-    //     {path: '/create', component: App}
-    // ];
-    // var router = new VueRouter({
-    //     routes: routes
-    // });
-    // debugger
-    // router.start(vue,"#contentpanel");
 });
+
+
+jQuery.fn.loadMainPanel = function (path) {
+    //var tpl = require("../components/contract/" + path + ".vue");
+
+    //jQuery('#contentpanel').html(tpl);
+    //var tpl_js = require("../components/contract/" + path);
+
+
+    jQuery.get("/src/components/contract/"+path+".vue",function (data) {
+        console.log(data);
+        $("#contentpanel").html(data);
+    })
+};
 
 /**
  * 菜单部分操作
@@ -515,11 +523,21 @@ jQuery('.nav-item').on('click', function () {
     if (!rowCount) rowCount = 0;
 
     if (type) {
-        var App = require('../components/contract/create.vue');
-        console.log(App);
-        //$('#contentpanel').html(data);
+        jQuery.fn.loadMainPanel(type);
+        // var App = require('../components/contract/' + type + ".vue");
+        // Vue.component(type, App);
+        // var app = new Vue({
+        //     el: '#contentpanel',
+        //     data: {
+        //         currentView: type
+        //     }
+        // });
+        // // app.currentView = 'page';
+        // App.ready();
+
 
     }
+
 
     // if (type == "department") {
     //     jQuery.get("/assets/json/" + type + ".json", {pageCount: 1, rowCount: rowCount}, function (obj) {
