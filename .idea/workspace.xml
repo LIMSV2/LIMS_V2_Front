@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a48a628e-bfa1-47c2-a96a-106a45ae50d3" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/template/contract/draft.tpl" afterPath="$PROJECT_DIR$/assets/template/contract/draft.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/template/subject/contract_select_list.tpl" afterPath="$PROJECT_DIR$/assets/template/subject/contract_select_list.tpl" />
     </list>
     <ignored path="LIMS_V2_Front.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,80 +23,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="change.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/template/contract/change.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7261">
-              <caret line="14" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="488" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="preInfo.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/template/contract/preInfo.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-587">
-              <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="draft.tpl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/template/contract/draft.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="462" column="77" selection-start-line="462" selection-start-column="77" selection-end-line="462" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contract_template_list.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/json/contract_template_list.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contract_change.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/template/subject/contract_change.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1045">
-              <caret line="400" column="31" selection-start-line="400" selection-start-column="31" selection-end-line="400" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/common/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="83" column="90" selection-start-line="83" selection-start-column="90" selection-end-line="83" selection-end-column="90" />
+            <state relative-caret-position="-13065">
+              <caret line="91" column="90" selection-start-line="91" selection-start-column="90" selection-end-line="91" selection-end-column="90" />
               <folding>
                 <element signature="n#style#0;n#div#4;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#48755#52306#0" expanded="false" />
-                <marker date="1477019225000" expanded="true" signature="50359:50374" placeholder="..." />
-                <marker date="1477019225000" expanded="true" signature="50713:50728" placeholder="..." />
-                <marker date="1477019225000" expanded="true" signature="51066:51077" placeholder="..." />
-                <marker date="1477019225000" expanded="true" signature="51484:51499" placeholder="..." />
-                <marker date="1477019225000" expanded="true" signature="51798:51813" placeholder="..." />
-                <marker date="1477019225000" expanded="true" signature="52112:52123" placeholder="..." />
+                <element signature="e#49830#53381#0" expanded="false" />
+                <marker date="1477021672000" expanded="true" signature="51434:51449" placeholder="..." />
+                <marker date="1477021672000" expanded="true" signature="51788:51803" placeholder="..." />
+                <marker date="1477021672000" expanded="true" signature="52141:52152" placeholder="..." />
+                <marker date="1477021672000" expanded="true" signature="52559:52574" placeholder="..." />
+                <marker date="1477021672000" expanded="true" signature="52873:52888" placeholder="..." />
+                <marker date="1477021672000" expanded="true" signature="53187:53198" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contract_monitor_addItem.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/template/subject/contract_monitor_addItem.tpl">
+      <file leaf-file-name="create.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/template/task/create.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="63" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="63" />
+            <state relative-caret-position="306">
+              <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contract_select_list.tpl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/template/subject/contract_select_list.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -105,8 +65,8 @@
       <file leaf-file-name="create.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/template/contract/create.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8925">
-              <caret line="525" column="52" selection-start-line="525" selection-start-column="52" selection-end-line="525" selection-end-column="52" />
+            <state relative-caret-position="275">
+              <caret line="32" column="82" selection-start-line="31" selection-start-column="91" selection-end-line="32" selection-end-column="82" />
               <folding>
                 <marker date="1477018905000" expanded="true" signature="45656:45769" placeholder="..." />
               </folding>
@@ -114,21 +74,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template_select_list.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/template/subject/template_select_list.tpl">
+      <file leaf-file-name="search.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/template/contract/search.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="38" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="38" />
+            <state relative-caret-position="824">
+              <caret line="216" column="72" selection-start-line="216" selection-start-column="45" selection-end-line="216" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/template/contract/search.tpl">
+      <file leaf-file-name="tabs-accordions.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bracket/bracket /tabs-accordions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="177" column="69" selection-start-line="136" selection-start-column="24" selection-end-line="177" selection-end-column="69" />
+            <state relative-caret-position="4253">
+              <caret line="436" column="8" selection-start-line="436" selection-start-column="8" selection-end-line="478" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -190,8 +150,10 @@
         <option value="$PROJECT_DIR$/assets/template/subject/template_select_list.tpl" />
         <option value="$PROJECT_DIR$/assets/json/contract_template.json" />
         <option value="$PROJECT_DIR$/assets/template/contract/create.tpl" />
-        <option value="$PROJECT_DIR$/pages/common/index.html" />
         <option value="$PROJECT_DIR$/assets/template/contract/draft.tpl" />
+        <option value="$PROJECT_DIR$/pages/common/index.html" />
+        <option value="$PROJECT_DIR$/assets/template/task/create.tpl" />
+        <option value="$PROJECT_DIR$/assets/template/subject/contract_select_list.tpl" />
       </list>
     </option>
   </component>
@@ -283,6 +245,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="bracket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bracket " />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIMS_V2_Front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIMS_V2_Front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -310,28 +290,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="subject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIMS_V2_Front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIMS_V2_Front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="items" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -479,12 +437,12 @@
       <workItem from="1476858389623" duration="12100000" />
       <workItem from="1476880054326" duration="2136000" />
       <workItem from="1476890465431" duration="47070000" />
-      <workItem from="1477012149165" duration="7607000" />
+      <workItem from="1477012149165" duration="11917000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102825000" />
+    <option name="totallyTimeSpent" value="107135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -527,21 +485,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gulpfile.js" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.js" />
     <entry file="file://$PROJECT_DIR$/src/js.js" />
     <entry file="file://$PROJECT_DIR$/npm-debug.log" />
@@ -741,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/json/contract_search_result.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/template/subject/contract_view.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2499">
@@ -777,14 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/template/contract/search.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="177" column="69" selection-start-line="136" selection-start-column="24" selection-end-line="177" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/json/contract_create.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -809,16 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/template/contract/create.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8925">
-          <caret line="525" column="52" selection-start-line="525" selection-start-column="52" selection-end-line="525" selection-end-column="52" />
-          <folding>
-            <marker date="1477018905000" expanded="true" signature="45656:45769" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/json/contract_template.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -840,23 +758,6 @@
         <state relative-caret-position="2975">
           <caret line="359" column="15" selection-start-line="359" selection-start-column="7" selection-end-line="359" selection-end-column="15" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/common/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="83" column="90" selection-start-line="83" selection-start-column="90" selection-end-line="83" selection-end-column="90" />
-          <folding>
-            <element signature="n#style#0;n#div#4;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#48755#52306#0" expanded="false" />
-            <marker date="1477019225000" expanded="true" signature="50359:50374" placeholder="..." />
-            <marker date="1477019225000" expanded="true" signature="50713:50728" placeholder="..." />
-            <marker date="1477019225000" expanded="true" signature="51066:51077" placeholder="..." />
-            <marker date="1477019225000" expanded="true" signature="51484:51499" placeholder="..." />
-            <marker date="1477019225000" expanded="true" signature="51798:51813" placeholder="..." />
-            <marker date="1477019225000" expanded="true" signature="52112:52123" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -894,8 +795,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/template/contract/draft.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="462" column="77" selection-start-line="462" selection-start-column="77" selection-end-line="462" selection-end-column="77" />
+        <state relative-caret-position="25">
+          <caret line="432" column="13" selection-start-line="432" selection-start-column="13" selection-end-line="432" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/template/contract/create.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="32" column="82" selection-start-line="31" selection-start-column="91" selection-end-line="32" selection-end-column="82" />
+          <folding>
+            <marker date="1477018905000" expanded="true" signature="45656:45769" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bracket/bracket /tabs-accordions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4253">
+          <caret line="436" column="8" selection-start-line="436" selection-start-column="8" selection-end-line="478" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/template/contract/search.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="824">
+          <caret line="216" column="72" selection-start-line="216" selection-start-column="45" selection-end-line="216" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/json/contract_search_result.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/common/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13065">
+          <caret line="91" column="90" selection-start-line="91" selection-start-column="90" selection-end-line="91" selection-end-column="90" />
+          <folding>
+            <element signature="n#style#0;n#div#4;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#49830#53381#0" expanded="false" />
+            <marker date="1477021672000" expanded="true" signature="51434:51449" placeholder="..." />
+            <marker date="1477021672000" expanded="true" signature="51788:51803" placeholder="..." />
+            <marker date="1477021672000" expanded="true" signature="52141:52152" placeholder="..." />
+            <marker date="1477021672000" expanded="true" signature="52559:52574" placeholder="..." />
+            <marker date="1477021672000" expanded="true" signature="52873:52888" placeholder="..." />
+            <marker date="1477021672000" expanded="true" signature="53187:53198" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/template/task/create.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/template/subject/contract_select_list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
           <folding />
         </state>
       </provider>
