@@ -2,6 +2,8 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
+                <a class="btn btn-sm btn-info-alt pull-right" @click="use_template" data-toggle="modal"
+                   data-target=".bs-example-modal-static">使用模板</a>
                 <h4 class="panel-title">创建业务合同</h4>
             </div>
             <div class="panel-body panel-body-nopadding">
@@ -242,7 +244,8 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label text-center">交付方式</label>
                                     <div class="col-sm-10">
-                                        <select class="select2" v-model="payment_way" data-placeholder="选择交付方式"
+                                        <select class="select2" v-model="payment_way" id="payment_way"
+                                                data-placeholder="选择交付方式"
                                                 required>
                                             <option value=""></option>
                                             <option value="0">客户自取</option>
@@ -353,7 +356,8 @@
                                                                     </td>
                                                                     <td class="text-center">{{item.monitor_point}}</td>
                                                                     <td class="text-center">
-                                                                        <template v-for="temp in item.monitor_item_text">
+                                                                        <template
+                                                                                v-for="temp in item.monitor_item_text">
                                                                             {{temp.name}}
                                                                         </template>
 
@@ -441,7 +445,7 @@
                     <ul class="pager wizard">
                         <li class="previous"><a href="javascript:void(0)">上一项</a></li>
                         <li class="next"><a href="javascript:void(0)">下一项</a></li>
-                        <li class="draft"><a href="javascript:void(0)" @click="saveAsDraft">存为草稿</a></li>
+                        <li class="draft"><a href="javascript:void(0)" @click="saveAsDraft">存为模板</a></li>
                         <li class="print"><a href="javascript:void(0)" @click="print">打印</a></li>
                         <li class="finish"><a href="javascript:void(0)" @click="saveAsProject">完成创建</a></li>
                     </ul>
@@ -493,6 +497,66 @@
                 other: ""
             },
             methods: {
+                /**
+                 * 使用模板
+                 */
+                use_template: function () {
+                    var me = this;
+                    me.$http.get("/assets/json/contract_template_list.json").then(function (response) {
+                        var data = response.data;
+                        var template = jQuery.fn.loadTemplate("/assets/template/subject/template_select_list.tpl");
+                        Vue.component('contract_template', {
+                            template: template,
+                            data: function () {
+                                return {
+                                    templates: data.results
+                                };
+                            },
+                            methods: {
+                                startSearch: function (event) {
+                                    //向服务器发送查询请求
+                                    alert("触发了enter操作");
+                                },
+                                choose: function (data) {
+                                    var template = data.template;
+                                    jQuery("#custom_modal").modal("hide");
+                                    jQuery.fn.check_msg({
+                                        msg: "是否导入名为【" + template.name + "】的合同模板?",
+                                        success: function () {
+                                            debugger
+                                            var id = template.id;
+                                            me.$http.get("/assets/json/contract_template.json").then(function (response) {
+                                                var data = response.data;
+                                                for (var key in data) {
+                                                    if (me[key] != undefined) {
+                                                        var value = data[key];
+                                                        me.$set(key, value);
+                                                        if (key == 'monitor_type') {
+                                                            $('#monitor_type').find('option[value="' + value + '"]').prop("selected", "selected");
+                                                            $('#monitor_type').trigger("change");
+                                                        }
+                                                        if (key == 'payment_way') {
+                                                            $('#payment_way').find('option[value="' + value + '"]').prop("selected", "selected");
+                                                            $('#payment_way').trigger("change");
+                                                        }
+                                                    }
+
+                                                }
+                                            }, function (response) {
+
+                                            });
+
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                        LIMS.dialog.$set('title', '使用合同模板');
+                        LIMS.dialog.currentView = 'contract_template';
+                    }, function (response) {
+
+                    });
+                },
                 /**
                  * 获取预设乙方信息
                  */
@@ -607,7 +671,9 @@
                                         other: this.other
                                     };
                                     me.item_arr.push(data);
-                                    console.log(data);
+                                    jQuery("#monitor_addItem")[0].reset();
+                                    jQuery("#monitor_addItem .select2").val("").trigger("change");
+                                    jQuery("#tags").removeTag("");
                                     jQuery.fn.alert_msg("检测项保存成功!");
                                 },
                                 cancel: function () {
@@ -685,13 +751,15 @@
                     this.item_arr.$set(index + 1, value);
                 },
                 /**
-                 * 以草稿保存
+                 * 以模板保存
                  */
                 saveAsDraft: function () {
+                    var template = '<div class="form-group"> <div class="col-sm-12"> <input type="text" id="template_name" placeholder="请输入模板名称" class="form-control"> </div> </div>';
                     jQuery.fn.check_msg({
-                        msg: "是否将合同保存为草稿？您可以在\"草稿合同\"列表中查看、修改或进入项目流中。",
+                        msg: '<p>是否将合同保存为模板？您可以在\"模板合同\"列表中查看、修改或进入项目流中。</p>'+template,
                         success: function () {
-                            jQuery.fn.alert_msg("合同保存草稿成功！");
+                            var name = jQuery("#template_name").val();
+                            jQuery.fn.alert_msg("合同模板【"+name+"】保存成功！");
                         }
                     });
                 },
@@ -822,22 +890,6 @@
                     numberOfMonths: 3,
                     showButtonPanel: true
                 });
-
-                this.$http.get('/assets/json/contract_create.json').then(function (response) {
-                    var data = response.data;
-                    for (var key in data) {
-                        var value = data[key];
-                        this.$set(key, value);
-                        if (key == 'monitor_type') {
-                            $('#monitor_type').find('option[value="' + value + '"]').prop("selected", "selected");
-                            $('#monitor_type').trigger("change");
-                        }
-                    }
-                    $('.select2').trigger("change");
-                }, function (response) {
-                    //handle error
-                });
-
                 this.$watch('monitor_way', function (val) {
                     if (this.monitor_way == 0) {
                         jQuery('input[name=monitor_way_desp]').prop("disabled", true);
