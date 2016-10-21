@@ -1,11 +1,11 @@
 <div class="panel panel-info">
     <div class="panel-heading">
-        <h3 class="panel-title">合同草稿箱</h3>
+        <h3 class="panel-title">合同模板</h3>
     </div>
     <div class="panel-body">
         <div class="alert alert-success">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <strong>提示!</strong> 您可以对草稿箱中的合同草稿进行"进入流程"操作或者"删除"操作,删除操作不可逆。
+            <strong>提示!</strong> 合同模板可以用来预设部分合同内容,提高合同创建效率。
         </div>
         <div class="table-responsive">
             <table class="table table-hidaction table-hover mb30">

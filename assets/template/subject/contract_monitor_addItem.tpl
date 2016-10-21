@@ -1,4 +1,4 @@
-<form class="form-horizontal form-bordered">
+<form class="form-horizontal form-bordered" id="monitor_addItem">
 
     <div class="form-group">
         <label class="col-sm-2 control-label">环境要素</label>
