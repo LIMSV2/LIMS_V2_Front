@@ -133,13 +133,12 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">承接科室</label>
                             <div class="col-sm-8">
-                                <select class="select2" v-model="payment_way" id="payment_way"
+                                <select class="select2" v-model="receive_depart" id="receive_depart"
                                         data-placeholder="选择交付方式"
                                         required>
-                                    <option value=""></option>
-                                    <option value="0">客户自取</option>
-                                    <option value="1">挂号邮寄</option>
-                                    <option value="2">其他方式</option>
+                                    <template v-for="item in receive_depart_list">
+                                        <option value="{{item.id}}">{{item.name}}</option>
+                                    </template>
                                 </select>
                                 <span class="help-block">承接科室设定项目流程的走向,管理员可以在"系统设置"->"承接科室设置"中进行流程修改。</span>
                             </div>
@@ -151,8 +150,8 @@
                             </div>
                         </div>
                         <div class="form-group text-center">
-                            <a class="btn btn-primary">创 建</a>
-                            <a class="btn btn-default">清 空</a>
+                            <a class="btn btn-primary" @click="create_task">创 建</a>
+                            <a class="btn btn-default @click=clear_sumbit">清 空</a>
                         </div>
                     </form>
                 </div>
@@ -176,8 +175,9 @@
                 "monitor_way": 0,
                 "item_arr": [],
                 "monitor_way_desp": "",
-                "payment_way": "",
-                "other": ""
+                "receive_depart": "",
+                "other": "",
+                "receive_depart_list": []
             },
             methods: {
                 from_customer: function () {
@@ -230,27 +230,82 @@
                                 return {result_list: data.results};
                             },
                             methods: {
-                                startSearch: function (event) {
-                                    //向服务器发送查询请求
-                                    alert("触发了enter操作");
-                                },
-                                choose: function (data) {
-                                    //console.log(data)
-                                    var customer = data.customer;
-                                    jQuery("#custom_modal").modal("hide");
-                                    jQuery.fn.check_msg({
-                                        msg: "是否导入【" + customer.client_unit + "】公司的客户资料?",
-                                        success: function () {
-                                            for (var key in customer) {
-                                                me.$set(key, customer[key]);
+                                import_into: function (data) {
+                                    console.log(data.id);
+                                    me.$http.get("/assets/json/contract_template.json").then(function (response) {
+                                        var data = response.data;
+                                        for (var key in data) {
+                                            if (me[key] != undefined) {
+                                                me.$set(key, data[key]);
                                             }
-
                                         }
+                                        jQuery('#custom_lg_modal').modal("hide");
+                                        jQuery.fn.alert_msg("合同导入成功！");
+
+                                    }, function (response) {
+
+                                    })
+                                },
+                                show_info: function () {
+                                    jQuery("#custom_lg_modal").modal("hide");
+                                    me.$http.get("/assets/json/contract_template.json").then(function (response) {
+                                        var data = response.data;
+                                        var template = jQuery.fn.loadTemplate("/assets/template/subject/contract_view.tpl");
+                                        Vue.component('view_contract' + data.id, {
+                                            template: template,
+                                            data: function () {
+                                                return {
+                                                    client_unit: "",
+                                                    client_code: "",
+                                                    client_address: "",
+                                                    client_tel: "",
+                                                    client: "",
+                                                    client_fax: "",
+                                                    trustee_unit: "",
+                                                    trustee_code: "",
+                                                    trustee_address: "",
+                                                    trustee_tel: "",
+                                                    trustee: "",
+                                                    trustee_fax: "",
+                                                    project_name: "",
+                                                    monitor_aim: "",
+                                                    monitor_type: "",
+                                                    monitor_way: "",
+                                                    monitor_way_desp: "",
+                                                    subpackage: "",
+                                                    subpackage_project: "",
+                                                    item_arr: [],
+                                                    payment_way: "",
+                                                    finish_date: "",
+                                                    payment_count: "",
+                                                    in_room: "",
+                                                    keep_secret: "",
+                                                    other: ""
+                                                };
+                                            },
+                                            methods: {},
+                                            ready: function () {
+                                                for (var key in data) {
+                                                    this.$set(key, data[key]);
+                                                }
+                                            }
+                                        });
+                                        LIMS.dialog.$set('title', '从客户管理系统中导入');
+                                        LIMS.dialog.currentView = 'view_contract' + data.id;
+                                    }, function (response) {
+                                        //error
+                                        jQuery.fn.error_msg("客户资料获取失败！");
                                     });
+
+
+                                    jQuery("#custom_modal").modal("show");
+
+
+                                    return;
                                 }
                             }
                         });
-                        LIMS.dialog_lg.$set('title', '从现有合同导入');
+                        LIMS.dialog_lg.$set('title', '合同预览');
                         LIMS.dialog_lg.currentView = 'child';
                     }, function (response) {
                         //error
@@ -347,9 +402,22 @@
                     }, function (response) {
 
                     });
+                },
+                create_task: function () {
+                    var me = this;
+                    jQuery.fn.check_msg({
+                        msg: "是否创建任务书并进入项目流程?",
+                        success: function () {
+                            console.log(JSON.parse(JSON.stringify(me._data)));
+                        }
+                    })
+                },
+                clear_sumbit: function () {
+                    alert("取消");
                 }
             },
             ready: function () {
+                var me = this;
                 var dom = $(this.$el);
                 dom.find('.select2').select2({
                     width: '100%',
@@ -362,6 +430,21 @@
                         dom.find('input[name=monitor_way_desp]').prop("disabled", false);
                     }
                 });
+
+
+                jQuery('#receive_depart').on("change", function () {
+                    me.$set("receive_depart", jQuery("#receive_depart").val());
+                });
+
+
+                me.$http.get("/assets/json/task_receive_deaprt.json").then(function (response) {
+                    var data = response.data;
+                    me.$set('receive_depart_list', data.results);
+                }, function (response) {
+                    jQuery.fn.error_msg("无法获取承接科室信息!");
+                })
+
+
             }
 
 
