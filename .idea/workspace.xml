@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a48a628e-bfa1-47c2-a96a-106a45ae50d3" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/json/contract_list.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/json/contract_template.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/json/contract_template_list.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/template/subject/contract_change.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/template/subject/template_select_list.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/template/contract/change.tpl" afterPath="$PROJECT_DIR$/assets/template/contract/change.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/template/contract/create.tpl" afterPath="$PROJECT_DIR$/assets/template/contract/create.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/template/contract/draft.tpl" afterPath="$PROJECT_DIR$/assets/template/contract/draft.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/template/subject/contract_monitor_addItem.tpl" afterPath="$PROJECT_DIR$/assets/template/subject/contract_monitor_addItem.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/common/index.html" afterPath="$PROJECT_DIR$/pages/common/index.html" />
     </list>
     <ignored path="LIMS_V2_Front.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +26,8 @@
       <file leaf-file-name="change.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/template/contract/change.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7599">
-              <caret line="447" column="33" selection-start-line="444" selection-start-column="32" selection-end-line="447" selection-end-column="33" />
+            <state relative-caret-position="-7261">
+              <caret line="14" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="488" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -46,7 +36,7 @@
       <file leaf-file-name="preInfo.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/template/contract/preInfo.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="-587">
               <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
               <folding />
             </state>
@@ -56,8 +46,18 @@
       <file leaf-file-name="draft.tpl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/template/contract/draft.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            <state relative-caret-position="535">
+              <caret line="462" column="77" selection-start-line="462" selection-start-column="77" selection-end-line="462" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contract_template_list.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/json/contract_template_list.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -66,7 +66,7 @@
       <file leaf-file-name="contract_change.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/template/subject/contract_change.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6800">
+            <state relative-caret-position="1045">
               <caret line="400" column="31" selection-start-line="400" selection-start-column="31" selection-end-line="400" selection-end-column="31" />
               <folding />
             </state>
@@ -76,7 +76,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/common/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
+            <state relative-caret-position="428">
               <caret line="83" column="90" selection-start-line="83" selection-start-column="90" selection-end-line="83" selection-end-column="90" />
               <folding>
                 <element signature="n#style#0;n#div#4;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -119,16 +119,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
               <caret line="21" column="38" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contract_template.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/json/contract_template.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -489,18 +479,18 @@
       <workItem from="1476858389623" duration="12100000" />
       <workItem from="1476880054326" duration="2136000" />
       <workItem from="1476890465431" duration="47070000" />
-      <workItem from="1477012149165" duration="6617000" />
+      <workItem from="1477012149165" duration="7607000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101835000" />
+    <option name="totallyTimeSpent" value="102825000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16455697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16455697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -779,14 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/json/contract_list.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="359" column="15" selection-start-line="359" selection-start-column="7" selection-end-line="359" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/json/customer_select_total.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -803,14 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/json/contract_template_list.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/json/contract_create.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -819,26 +793,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/template/subject/template_select_list.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/json/contract_default.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/json/contract_template.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -861,9 +819,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/json/contract_template.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/template/subject/template_select_list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/json/contract_list.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2975">
+          <caret line="359" column="15" selection-start-line="359" selection-start-column="7" selection-end-line="359" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/common/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
+        <state relative-caret-position="428">
           <caret line="83" column="90" selection-start-line="83" selection-start-column="90" selection-end-line="83" selection-end-column="90" />
           <folding>
             <element signature="n#style#0;n#div#4;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -878,17 +860,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/template/contract/change.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7599">
-          <caret line="447" column="33" selection-start-line="444" selection-start-column="32" selection-end-line="447" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/template/subject/contract_change.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6800">
+        <state relative-caret-position="1045">
           <caret line="400" column="31" selection-start-line="400" selection-start-column="31" selection-end-line="400" selection-end-column="31" />
           <folding />
         </state>
@@ -896,16 +870,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/template/contract/preInfo.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="-587">
           <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/json/contract_template_list.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/template/contract/change.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7261">
+          <caret line="14" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="488" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/template/contract/draft.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        <state relative-caret-position="535">
+          <caret line="462" column="77" selection-start-line="462" selection-start-column="77" selection-end-line="462" selection-end-column="77" />
           <folding />
         </state>
       </provider>
