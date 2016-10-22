@@ -1,11 +1,12 @@
 <div class="row">
     <div class="col-sm-4 col-md-3">
-        <h4 class="subtitle mb5">项目名称</h4>
-        <input type="text" value="" v-model="search_projectName" placeholder="请输入项目关键字" class="form-control"/>
-
+        <h4 class="subtitle mb5">任务编号</h4>
+        <input type="text" value="" v-model="search_identify" placeholder="请输入任务编号" class="form-control"/>
         <div class="mb20"></div>
-
-        <h4 class="subtitle mb5">客户单位</h4>
+        <h4 class="subtitle mb5">任务名称</h4>
+        <input type="text" value="" v-model="search_projectName" placeholder="请输入项目关键字" class="form-control"/>
+        <div class="mb20"></div>
+        <h4 class="subtitle mb5">委托单位</h4>
         <select class="select2" v-model="search_customer" name="search_customer" multiple
                 data-placeholder="选择一个或多个客户单位...">
             <template v-for="item in customer_list">
@@ -16,11 +17,11 @@
 
         <div class="mb20"></div>
 
-        <h4 class="subtitle mb5">监测类型</h4>
+        <h4 class="subtitle mb5">承接科室</h4>
         <ul class="nav nav-sr">
-            <li v-for="type in monitor_type">
+            <li v-for="type in receive_depart">
                 <div class="ckbox ckbox-success">
-                    <input type="checkbox" name="monitor_type" value="{{type.id}}" id="checkbox_{{type.id}}">
+                    <input type="checkbox" name="receive_depart" value="{{type.id}}" id="checkbox_{{type.id}}">
                     <label for="checkbox_{{type.id}}">{{type.name}}</label>
                 </div>
             </li>
@@ -28,14 +29,14 @@
 
         <div class="mb20"></div>
 
-        <h4 class="subtitle mb5">合同创建起始时间</h4>
+        <h4 class="subtitle mb5">任务创建起始时间</h4>
         <div class="input-group">
             <input type="text" v-model="search_createTime_start" class="form-control" placeholder="mm/dd/yyyy"
                    id="date_start">
             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
         </div>
 
-        <h4 class="subtitle mb5">合同创建结束时间</h4>
+        <h4 class="subtitle mb5">任务创建结束时间</h4>
         <div class="input-group">
             <input type="text" v-model="search_createTime_end" class="form-control" placeholder="mm/dd/yyyy"
                    id="date_end">
@@ -68,17 +69,23 @@
                     <template v-for="result in result_list">
                         <div class="media">
                             <a href="javascript:;" class="pull-left">
-                                <img alt="" src="/assets/images/photos/contract.png" class="media-object">
+                                <img alt="" src="/assets/images/photos/task.png" class="media-object">
                             </a>
                             <div class="media-body">
-                                <a class="btn btn-default-alt pull-right" data-toggle="modal"
-                                   data-target=".bs-example-modal-lg" @click="view_info(result)">查看详情</a>
-                                <h4 class="filename text-primary">{{result.title}}</h4>
-                                <small class="text-muted">监测类型: {{result.monitor_type}}</small>
-                                <br/>
-                                <small class="text-muted">创建时间: {{result.create_time}}</small>
-                                <br/>
-                                <small class="text-muted">客户单位: {{result.client_unit}}</small>
+                                <div class="btn-demo pull-right">
+                                    <a class="btn btn-primary-alt " data-toggle="modal"
+                                       data-target=".bs-example-modal-lg" @click="view_info(result)">查看详情</a>
+                                    <a class="btn btn-info-alt " data-toggle="modal"
+                                       data-target=".bs-example-modal-lg" @click="view_process(result)">业务流程</a>
+                                </div>
+                                <div>
+                                    <h4 class="filename text-primary">{{result.project_name}}</h4>
+                                    <small class="text-muted">任务书编号: {{result.identify}}</small>
+                                    <br/>
+                                    <small class="text-muted">创建时间: {{result.create_time}}</small>
+                                    <br/>
+                                    <small class="text-muted">客户单位: {{result.client_unit}}</small>
+                                </div>
                             </div>
                         </div>
 
@@ -111,8 +118,8 @@
                     result_list: [],
                     totalRowCount: '',
                     searchCost: '',
-                    searchCondition: []
-
+                    searchCondition: [],
+                    "search_identify": ""
                 }
             },
             methods: {
@@ -132,54 +139,87 @@
                 },
                 view_info: function (data) {
                     var me = this;
-                    me.$http.get("/assets/json/contract_create.json").then(function (response) {
+                    me.$http.get("/assets/json/task_demo.json").then(function (response) {
                         var data = response.data;
-                        var template = jQuery.fn.loadTemplate("/assets/template/subject/contract_view.tpl");
-                        Vue.component('contract_view', {
+                        var template = jQuery.fn.loadTemplate("/assets/template/subject/task_view.tpl");
+                        Vue.component('task_view' + data.id, {
                             template: template,
                             data: function () {
                                 return {
-                                    client_unit: "",
-                                    client_code: "",
-                                    client_address: "",
-                                    client_tel: "",
-                                    client: "",
-                                    client_fax: "",
-                                    trustee_unit: "",
-                                    trustee_code: "",
-                                    trustee_address: "",
-                                    trustee_tel: "",
-                                    trustee: "",
-                                    trustee_fax: "",
-                                    project_name: "",
-                                    monitor_aim: "",
-                                    monitor_type: "",
-                                    monitor_way: "",
-                                    monitor_way_desp: "",
-                                    subpackage: "",
-                                    subpackage_project: "",
-                                    item_arr: [],
-                                    payment_way: "",
-                                    finish_date: "",
-                                    payment_count: "",
-                                    in_room: "",
-                                    keep_secret: "",
-                                    other: ""
+                                    "id": "",
+                                    "identify": "",
+                                    "client_unit": "",
+                                    "project_name": "",
+                                    "monitor_aim": "",
+                                    "client_address": "",
+                                    "client_code": "",
+                                    "client": "",
+                                    "client_tel": "",
+                                    "monitor_way": 0,
+                                    "create_time": "",
+                                    "item_arr": [],
+                                    "monitor_way_desp": "",
+                                    "receive_depart": "",
+                                    "task_charge": "",
+                                    "task_assigned": "",
+                                    "task_assigned_date": "",
+                                    "report_edit": "",
+                                    "report_edit_date": "",
+                                    "report_first_check": "",
+                                    "report_first_check_date": "",
+                                    "report_second_check": "",
+                                    "report_second_check_date": "",
+                                    "report_sign_check": "",
+                                    "report_sign_check_date": "",
+                                    "report_receive_check": "",
+                                    "report_receive_check_date": "",
+                                    "report_save_check": "",
+                                    "report_save_check_date": "",
+                                    "other": ""
                                 };
                             },
                             methods: {},
                             ready: function () {
+                                var me = this;
                                 for (var key in data) {
-                                    this.$set(key, data[key]);
+                                    if (me[key] != undefined) {
+                                        this.$set(key, data[key]);
+                                    }
                                 }
                             }
                         });
-                        LIMS.dialog_lg.$set('title', '查看合同详情');
-                        LIMS.dialog_lg.currentView = 'contract_view';
+                        LIMS.dialog_lg.$set('title', '查看任务书详情');
+                        LIMS.dialog_lg.currentView = 'task_view' + data.id;
                     }, function (response) {
                         jQuery.fn.error_msg("合同数据请求异常,请刷新后重新尝试。");
                     });
-
+                },
+                view_process: function (data) {
+                    var id = data.id;
+                    var me = this;
+                    me.$http.get("/assets/json/task_demo.json").then(function (response) {
+                        var data = response.data;
+                        var template = jQuery.fn.loadTemplate("/assets/template/subject/task_process_view.tpl");
+                        Vue.component('task_process_view' + data.id, {
+                            template: template,
+                            data: function () {
+                                return {};
+                            },
+                            methods: {},
+                            ready: function () {
+                                var me = this;
+                                for (var key in data) {
+                                    if (me[key] != undefined) {
+                                        this.$set(key, data[key]);
+                                    }
+                                }
+                            }
+                        });
+                        LIMS.dialog_lg.$set('title', '查看任务流程');
+                        LIMS.dialog_lg.currentView = 'task_process_view' + data.id;
+                    }, function (response) {
+                        jQuery.fn.error_msg("任务流程数据请求异常,请刷新后重新尝试。");
+                    });
 
                 }
             },
@@ -214,7 +254,7 @@
                     jQuery.fn.error_msg("获取客户信息列表失败！");
                 });
 
-                this.$http.get("/assets/json/contract_search_result.json").then(function (response) {
+                this.$http.get("/assets/json/task_search_list.json").then(function (response) {
                     var data = response.data;
                     me.$set("totalRowCount", data.totalRowCount);
                     me.$set("result_list", data.results);
