@@ -218,6 +218,7 @@
                             save: function () {
                                 var me = this;
                                 var data = JSON.parse(JSON.stringify(this._data));
+                                //此处发送一个请求给后端,返回之后处理下方代码
                                 console.log(data);
                                 jQuery.fn.alert_msg("权限设置成功!");
                                 me.checked_power = [];
