@@ -1,62 +1,70 @@
 <div class="row">
-    <div class="col-md-9">
-        <div class="btn-demo" id="toolbar">
-            <a class="btn btn-info-alt" data-toggle="modal"
-               data-target=".bs-example-modal-static" @click="add_depart">新
-                增</a>
-            <a class="btn btn-primary-alt select_all">全 选</a>
-            <a class="btn btn-default-alt select_no">反 选</a>
-            <a class="btn btn-success-alt " @click="run_depart">启 用</a>
-            <a class="btn btn-warning-alt stop_all_select" @click="stop_depart">禁 用</a>
-            <a class="btn btn-danger-alt del_all_select" @click="del_depart">删 除</a>
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="btn-demo" id="toolbar">
+                            <a class="btn btn-info-alt" data-toggle="modal"
+                               data-target=".bs-example-modal-static" @click="add_depart">新
+                                增</a>
+                            <a class="btn btn-primary-alt select_all">全 选</a>
+                            <a class="btn btn-default-alt select_no">反 选</a>
+                            <a class="btn btn-success-alt " @click="run_depart">启 用</a>
+                            <a class="btn btn-warning-alt stop_all_select" @click="stop_depart">禁 用</a>
+                            <a class="btn btn-danger-alt del_all_select" @click="del_depart">删 除</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" placeholder="搜索内容..." id="serach" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-info table-hover mb30 text-center">
+                                <thead>
+                                <tr>
+                                <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-center">编号</th>
+                                    <th class="text-center">部门名称</th>
+                                    <th class="text-center">当前状态</th>
+                                    <th></th>
+                                </tr>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <template v-for="item in results">
+                                    <tr>
+                                        <td class="text-center">
+                                            <input type="checkbox" name="check"></td>
+                                        <td class="text-center">{{item.id}}</td>
+                                        <td class="text-center">{{item.name}}</td>
+                                        <td class="text-center" v-if="item.state==0"><span class="label label-success">正常</span></td>
+                                        <td class="text-center" v-if="item.state==1"><span class="label label-danger">禁用</span></td>
+                                        <td class="table-action text-center">
+                                            <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-static"
+                                               @click="edit_item(item)"><i
+                                                    class="fa fa-pencil"></i></a>
+                                            <a href="javascript:;" v-if="item.state==1" @click="run_item(item)"><i
+                                                    class="fa fa-eye "></i></a>
+                                            <a href="javascript:;" v-if="item.state==0" @click="stop_item(item)"><i
+                                                    class="fa fa-eye-slash "></i></a>
+                                            <a href="javascript:;" class="delete-row" @click="del_item(item)"><i
+                                                    class="fa fa-trash-o "></i></a>
+                                        </td>
+                                    </tr>
+                                </template>
+                                </tbody>
+                            </table>
+                        </div><!-- table-responsive -->
+                    </div><!-- col-md-12 -->
+                    <div class="paging nomargin pull-right"></div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <input type="text" placeholder="搜索内容..." id="serach" class="form-control">
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <div class="table-responsive">
-            <table class="table table-info table-hover mb30 text-center">
-                <thead>
-                <tr>
-                <tr>
-                    <th class="text-center"></th>
-                    <th class="text-center">编号</th>
-                    <th class="text-center">部门名称</th>
-                    <th class="text-center">当前状态</th>
-                    <th></th>
-                </tr>
-                </tr>
-                </thead>
-                <tbody>
-                <template v-for="item in results">
-                    <tr>
-                        <td class="text-center">
-                            <input type="checkbox" name="check"></td>
-                        <td class="text-center">{{item.id}}</td>
-                        <td class="text-center">{{item.name}}</td>
-                        <td class="text-center" v-if="item.state==0">正常</td>
-                        <td class="text-center" v-if="item.state==1">禁用</td>
-                        <td class="table-action text-center">
-                            <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-static"
-                               @click="edit_item(item)"><i
-                                    class="fa fa-pencil"></i></a>
-                            <a href="javascript:;" v-if="item.state==1" @click="run_item(item)"><i
-                                    class="fa fa-eye "></i></a>
-                            <a href="javascript:;" v-if="item.state==0" @click="stop_item(item)"><i
-                                    class="fa fa-eye-slash "></i></a>
-                            <a href="javascript:;" class="delete-row" @click="del_item(item)"><i
-                                    class="fa fa-trash-o "></i></a>
-                        </td>
-                    </tr>
-                </template>
-                </tbody>
-            </table>
-        </div><!-- table-responsive -->
-    </div><!-- col-md-12 -->
-
 </div>
 <script type="text/javascript">
 
